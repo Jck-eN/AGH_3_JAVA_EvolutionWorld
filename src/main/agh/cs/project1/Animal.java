@@ -46,14 +46,14 @@ public class Animal implements IMapElement {
 
     public String toString() {
         switch (this.direction){
-            case NORTH: return "▲";
-            case EAST: return "►";
-            case SOUTH: return "▼";
-            case WEST: return "◄";
-            case NORTH_EAST: return "┐";
-            case NORTH_WEST: return "┌";
-            case SOUTH_EAST: return "┘";
-            case SOUTH_WEST: return "└";
+            case NORTH: return "N";
+            case EAST: return "E";
+            case SOUTH: return "S";
+            case WEST: return "W";
+            case NORTH_EAST: return "Q";
+            case NORTH_WEST: return "R";
+            case SOUTH_EAST: return "T";
+            case SOUTH_WEST: return "F";
             default: throw new IllegalArgumentException("Niepoprawny kierunek zwierzęcia");
         }
     }
