@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/EvolutionMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/EvolutionMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Plant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Plant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/config_tmp.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGH_3_JAVA_EvolutionWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AGH_3_JAVA_EvolutionWorld.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -121,7 +111,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
