@@ -1,10 +1,26 @@
 package agh.cs.project1;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.FileReader;
 import java.io.IOException;
 
 public class World {
     public static void main(String[] args) {
         try {
+
+            Object obj = new JSONParser().parse(new FileReader("D:\\Jacek\\Programowanie\\AGH\\AGH_3_JAVA\\labs\\src\\main\\agh\\cs\\project1\\config.json"));
+            JSONObject jo = (JSONObject) obj;
+            Config.EVOLUTION_MAP_WIDTH = Math.toIntExact((Long) jo.get("width"));
+            Config.EVOLUTION_MAP_HEIGHT = Math.toIntExact((Long) jo.get("height"));
+            Config.DEFAULT_ENERGY = Math.toIntExact((Long)  jo.get("startEnergy"));
+            Config.ENERGY_LOST_PER_MOVE = Math.toIntExact((Long) jo.get("moveEnergy"));
+            Config.PLANT_DEFAULT_SIZE = Math.toIntExact((Long) jo.get("startPlantSize"));
+            Config.PLANT_MAX_SIZE = Math.toIntExact((Long) jo.get("maxPlantSize"));
+            Config.JUNGLE_HEIGHT = Math.toIntExact(Math.round(Double.valueOf(Config.EVOLUTION_MAP_HEIGHT) * (Double) jo.get("jungleRatio")));
+            Config.JUNGLE_WIDTH = Math.toIntExact(Math.round(Double.valueOf(Config.EVOLUTION_MAP_WIDTH) * (Double) jo.get("jungleRatio")));
 
             EvolutionMap map = new EvolutionMap();
             //    IWorldMap map = new RectangularMap(10, 5);
@@ -37,6 +53,8 @@ public class World {
         catch (InterruptedException ex2){
             System.out.println(ex2.getMessage());
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
             e.printStackTrace();
         }
 

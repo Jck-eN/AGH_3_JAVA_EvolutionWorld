@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json-simple-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGH_3_JAVA_EvolutionWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AGH_3_JAVA_EvolutionWorld.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/MapDirectionTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,6 +30,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/json-simple-1.1.1.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -99,7 +103,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575052520214</updated>
-      <workItem from="1575052525637" duration="744000" />
+      <workItem from="1575052525637" duration="1292000" />
     </task>
     <servers />
   </component>
