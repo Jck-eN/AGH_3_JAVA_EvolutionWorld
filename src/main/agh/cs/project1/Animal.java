@@ -5,16 +5,12 @@ import java.util.List;
 import java.util.Random;
 
 public class Animal implements IMapElement {
-    private static Integer ENERGY_LOST_PER_MOVE = 1;
-    private static Integer REQUIRED_ENERGY = 10;
-    private static Integer DEFAULT_ENERGY = 400;
-
     private IWorldMap map;
     private MapDirection direction = MapDirection.NORTH;
     private Vector2d position = new Vector2d(2,2);
     private List<IPositionChangeObserver> observers = new ArrayList<>();
     private Genotype genotype;
-    private Integer energy = DEFAULT_ENERGY;
+    private Integer energy = Config.DEFAULT_ENERGY;
 
 
     public Animal(IWorldMap map, Vector2d initialPosition){
@@ -46,14 +42,14 @@ public class Animal implements IMapElement {
 
     public String toString() {
         switch (this.direction){
-            case NORTH: return "▲";
-            case EAST: return "►";
-            case SOUTH: return "▼";
-            case WEST: return "◄";
-            case NORTH_EAST: return "┐";
-            case NORTH_WEST: return "┌";
-            case SOUTH_EAST: return "┘";
-            case SOUTH_WEST: return "└";
+            case NORTH: return "N";
+            case EAST: return "E";
+            case SOUTH: return "S";
+            case WEST: return "W";
+            case NORTH_EAST: return "Q";
+            case NORTH_WEST: return "R";
+            case SOUTH_EAST: return "T";
+            case SOUTH_WEST: return "F";
             default: throw new IllegalArgumentException("Niepoprawny kierunek zwierzęcia");
         }
     }
@@ -64,7 +60,7 @@ public class Animal implements IMapElement {
 
 
     public void move(Vector2d newPosition){
-        this.lostEnergy(ENERGY_LOST_PER_MOVE);
+        this.lostEnergy(Config.ENERGY_LOST_PER_MOVE);
         Vector2d tmpOldPosition = new Vector2d(this.position.x, this.position.y);
         this.position = newPosition;
         positionChanged(tmpOldPosition, newPosition);
@@ -115,7 +111,7 @@ public class Animal implements IMapElement {
 
     public Animal createNewAnimal(Animal other){
         Vector2d freePosition = this.findFreeSpot();
-        if(this.getEnergy() < Animal.REQUIRED_ENERGY || other.getEnergy() < Animal.REQUIRED_ENERGY || freePosition == null){
+        if(this.getEnergy() < Config.REQUIRED_ENERGY || other.getEnergy() < Config.REQUIRED_ENERGY || freePosition == null){
             return null;
         }
         Integer newEnergy = this.getEnergy()/4;
