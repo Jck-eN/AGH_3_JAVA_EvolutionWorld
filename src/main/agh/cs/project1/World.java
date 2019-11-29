@@ -22,9 +22,12 @@ public class World {
                 map.run();
                 if(i%100==0){
                     System.out.println(map);
+                    System.out.println("Tura: " +i);
                     Thread.sleep(100);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                 }
             }
+            System.out.println(map);
             System.out.println("koniec");
         }
         catch (IllegalArgumentException ex){
@@ -33,6 +36,8 @@ public class World {
         }
         catch (InterruptedException ex2){
             System.out.println(ex2.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
 
