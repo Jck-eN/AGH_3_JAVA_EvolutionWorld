@@ -3,16 +3,12 @@ package agh.cs.project1;
 import java.util.*;
 
 public class EvolutionMap extends AbstractWorldMap {
-    private static final Integer EVOLUTION_MAP_WIDTH = 100;
-    private static final Integer EVOLUTION_MAP_HEIGHT = 30;
-    private static final Integer JUNGLE_WIDTH = 10;
-    private static final Integer JUNGLE_HEIGHT = 10;
 
     private Map<Vector2d, Plant> plants = new LinkedHashMap<>();
 
-    private final Rectangle area = new Rectangle(new Vector2d(0,0), new Vector2d(EVOLUTION_MAP_WIDTH-1, EVOLUTION_MAP_HEIGHT-1));
-    private final Rectangle jungle = new Rectangle(new Vector2d((EVOLUTION_MAP_WIDTH-JUNGLE_WIDTH)/2,(EVOLUTION_MAP_HEIGHT-JUNGLE_HEIGHT)/2),
-            new Vector2d((EVOLUTION_MAP_WIDTH-JUNGLE_WIDTH)/2+JUNGLE_WIDTH, (EVOLUTION_MAP_HEIGHT-JUNGLE_HEIGHT)/2+JUNGLE_HEIGHT));
+    private final Rectangle area = new Rectangle(new Vector2d(0,0), new Vector2d(Config.EVOLUTION_MAP_WIDTH-1, Config.EVOLUTION_MAP_HEIGHT-1));
+    private final Rectangle jungle = new Rectangle(new Vector2d((Config.EVOLUTION_MAP_WIDTH-Config.JUNGLE_WIDTH)/2,(Config.EVOLUTION_MAP_HEIGHT-Config.JUNGLE_HEIGHT)/2),
+            new Vector2d((Config.EVOLUTION_MAP_WIDTH-Config.JUNGLE_WIDTH)/2+Config.JUNGLE_WIDTH, (Config.EVOLUTION_MAP_HEIGHT-Config.JUNGLE_HEIGHT)/2+Config.JUNGLE_HEIGHT));
 
     private Vector2d getRandomPosition(Rectangle area){
         Random r = new Random();
