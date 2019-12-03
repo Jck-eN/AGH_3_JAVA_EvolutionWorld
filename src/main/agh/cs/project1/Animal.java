@@ -5,15 +5,18 @@ import java.util.List;
 import java.util.Random;
 
 public class Animal implements IMapElement {
+    public static Integer animalCount = 0;
     private IWorldMap map;
     private MapDirection direction = MapDirection.NORTH;
     private Vector2d position = new Vector2d(2,2);
     private List<IPositionChangeObserver> observers = new ArrayList<>();
     private Genotype genotype;
     private Integer energy = Config.DEFAULT_ENERGY;
+    private Integer id;
 
 
     public Animal(IWorldMap map, Vector2d initialPosition){
+        this.id = Animal.animalCount++;
         this.direction = this.generateRandomDirection();
         this.map = map;
         this.position = initialPosition;

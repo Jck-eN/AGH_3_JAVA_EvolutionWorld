@@ -17,7 +17,7 @@ public class Config {
     public static Integer PLANT_MAX_SIZE = 10;
     public static Integer PLANT_DEFAULT_SIZE = 5;
     public static Integer ENERGY_LOST_PER_MOVE = 1;
-    public static Integer REQUIRED_ENERGY = 10;
+    public static Integer REQUIRED_ENERGY = 200;
     public static Integer DEFAULT_ENERGY = 400;
 
     public static void init(String filename){
@@ -27,6 +27,7 @@ public class Config {
             Config.EVOLUTION_MAP_WIDTH = Math.toIntExact((Long) jo.get("width"));
             Config.EVOLUTION_MAP_HEIGHT = Math.toIntExact((Long) jo.get("height"));
             Config.DEFAULT_ENERGY = Math.toIntExact((Long) jo.get("startEnergy"));
+            Config.REQUIRED_ENERGY = Config.DEFAULT_ENERGY/2;
             Config.ENERGY_LOST_PER_MOVE = Math.toIntExact((Long) jo.get("moveEnergy"));
             Config.PLANT_DEFAULT_SIZE = Math.toIntExact((Long) jo.get("startPlantSize"));
             Config.PLANT_MAX_SIZE = Math.toIntExact((Long) jo.get("maxPlantSize"));

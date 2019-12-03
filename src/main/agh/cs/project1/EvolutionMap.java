@@ -1,5 +1,7 @@
 package agh.cs.project1;
 
+import sun.awt.image.ImageWatched;
+
 import java.util.*;
 
 public class EvolutionMap extends AbstractWorldMap {
@@ -17,31 +19,53 @@ public class EvolutionMap extends AbstractWorldMap {
         return new Vector2d(area.getBottomLeftCorner().x+x, area.getBottomLeftCorner().y+y);
     }
 
-    private void addPlant(Rectangle areaToPlant){
-        Vector2d position;
-        int counter=0;
-        do {
-            if(counter > 2*areaToPlant.area()) return;
-            position = getRandomPosition(areaToPlant);
-            counter++;
+    public ArrayList<Vector2d> freePositions(Rectangle area){
+        return  freePositionsWithForbiddenArea(area, null);
+    }
+
+    public ArrayList<Vector2d> freePositions(){
+        return  freePositionsWithForbiddenArea(this.area, null);
+    }
+
+    public ArrayList<Vector2d> freePositionsWithForbiddenArea(Rectangle area, Rectangle forbidden){
+        ArrayList<Vector2d> freePos= new ArrayList<>();
+        for(int i=area.getBottomLeftCorner().x; i<= area.getTopRightCorner().x; i++){
+            for(int j=area.getBottomLeftCorner().y; j<= area.getTopRightCorner().y; j++){
+                if(!this.isOccupied(new Vector2d(i, j)) ){
+                    if(forbidden == null) freePos.add(new Vector2d(i, j));
+                    else if (!forbidden.hasPositionInside(new Vector2d(i, j))){
+                        freePos.add(new Vector2d(i, j));
+                    }
+                }
+            }
         }
-        while (this.isOccupied(position));
-        Plant g = new Plant(position);
-        this.plants.put(g.getPosition(), g);
+        return freePos;
+    }
+
+    public Vector2d getRandomFreePosition(Rectangle area){
+        return this.getRandomFreePositionWithForbiddenArea(area, null);
+    }
+    public Vector2d getRandomFreePosition(){
+        return this.getRandomFreePositionWithForbiddenArea(this.area, null);
+    }
+
+    public Vector2d getRandomFreePositionWithForbiddenArea(Rectangle area, Rectangle forbidden){
+        ArrayList<Vector2d> freePos= this.freePositionsWithForbiddenArea(area, forbidden);
+        if(freePos.size() == 0) return null;
+        Random r = new Random();
+        int idx = r.nextInt(freePos.size());
+         return  freePos.get(idx);
+    }
+
+    private void addPlant(Rectangle areaToPlant){
+        this.addPlant(areaToPlant, null);
     }
 
     private void addPlant(Rectangle areaToPlant, Rectangle areaForbidden){
-        Vector2d position;
-        int counter=0;
-        Random r = new Random();
-        do {
-            if(counter > 2*areaToPlant.area()) return;
-            position = getRandomPosition(areaToPlant);
-            counter++;
-        }
-        while (this.isOccupied(position) || areaForbidden.hasPositionInside(position));
+        Vector2d position = this.getRandomFreePositionWithForbiddenArea(areaToPlant, areaForbidden);
         Plant g = new Plant(position);
-        this.plants.put(g.getPosition(), g);
+        this.plants.put(position, g);
+        return;
     }
 
     public Plant plantAt(Vector2d position){
@@ -62,10 +86,7 @@ public class EvolutionMap extends AbstractWorldMap {
         for(Plant plant : plants.values()){
             plant.grow(1);
         }
-        ArrayList<Animal> tmpAnimalList = new ArrayList<>();
-        for(Animal a : this.animals.values()){
-                tmpAnimalList.add(a);
-        }
+        ArrayList<Animal> tmpAnimalList = new ArrayList<>(this.animals.values());
         for(Animal a : tmpAnimalList){
             if(a.getEnergy() < 0 ){
                 a.die();
