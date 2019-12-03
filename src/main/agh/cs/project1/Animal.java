@@ -6,10 +6,10 @@ import java.util.Random;
 
 public class Animal implements IMapElement {
     public static Integer animalCount = 0;
-    private IWorldMap map;
-    private MapDirection direction = MapDirection.NORTH;
-    private Vector2d position = new Vector2d(2,2);
-    private List<IPositionChangeObserver> observers = new ArrayList<>();
+    private final IWorldMap map;
+    private MapDirection direction;
+    private Vector2d position;
+    private final List<IPositionChangeObserver> observers = new ArrayList<>();
     private Genotype genotype;
     private Integer energy = Config.DEFAULT_ENERGY;
 
@@ -22,13 +22,13 @@ public class Animal implements IMapElement {
         this.genotype = new Genotype();
     }
 
-    public Animal(IWorldMap map, Vector2d initialPosition, int energy){
+    private Animal(IWorldMap map, Vector2d initialPosition, int energy){
         this(map, initialPosition);
         this.energy = energy;
     }
 
 
-    public Animal(IWorldMap map, Vector2d initialPosition, Integer energy, Genotype genotype){
+    private Animal(IWorldMap map, Vector2d initialPosition, Integer energy, Genotype genotype){
         this(map, initialPosition, energy);
         this.genotype = genotype;
     }
@@ -90,7 +90,7 @@ public class Animal implements IMapElement {
         this.energy += energyToAdd;
     }
 
-    public void lostEnergy(int energyToRemove){
+    void lostEnergy(int energyToRemove){
         this.energy -= energyToRemove;
     }
 
@@ -100,7 +100,7 @@ public class Animal implements IMapElement {
 
     private MapDirection generateRandomDirection(){
         Random r = new Random();
-        Integer dir_no = r.nextInt((int) MapDirection.values().length);
+        Integer dir_no = r.nextInt(MapDirection.values().length);
         return MapDirection.values()[dir_no];
     }
 
@@ -111,7 +111,7 @@ public class Animal implements IMapElement {
     }
 
     public Animal createNewAnimal(Animal other){
-        Vector2d freePosition = this.map.findFreeSpot(this.getPosition());
+        Vector2d freePosition = this.map.findFreeSpaceNear(this.getPosition());
         if(this.getEnergy() < Config.REQUIRED_ENERGY || other.getEnergy() < Config.REQUIRED_ENERGY || freePosition == null){
             return null;
         }

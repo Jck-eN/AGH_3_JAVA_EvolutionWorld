@@ -1,7 +1,7 @@
 package agh.cs.project1;
 
 public class Plant implements IMapElement {
-    private Vector2d position;
+    private final Vector2d position;
     private final static Integer maxSize = Config.PLANT_MAX_SIZE;
 
     private Integer size = Config.PLANT_DEFAULT_SIZE;

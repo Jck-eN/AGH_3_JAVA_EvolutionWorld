@@ -7,7 +7,7 @@ package agh.cs.project1;
  * @author apohllo
  *
  */
-public interface IWorldMap {
+interface IWorldMap {
     /**
      * Indicate if any object can move to the given position.
      *
@@ -22,9 +22,8 @@ public interface IWorldMap {
      *
      * @param animal
      *            The animal to place on the map.
-     * @return True if the animal was placed. The animal cannot be placed if the map is already occupied.
      */
-    boolean place(Animal animal);
+    void place(Animal animal);
 
     /**
      * Move the animal on the map according to the provided move directions. Every
@@ -55,5 +54,5 @@ public interface IWorldMap {
 
     boolean remove(Animal animal);
 
-    Vector2d findFreeSpot(Vector2d position);
+    Vector2d findFreeSpaceNear(Vector2d position);
 }

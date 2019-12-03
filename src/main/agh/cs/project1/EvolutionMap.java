@@ -1,22 +1,19 @@
 package agh.cs.project1;
 
-import sun.awt.image.ImageWatched;
-import sun.security.krb5.internal.crypto.Aes128;
-
 import java.util.*;
 
-public class EvolutionMap extends AbstractWorldMap {
+public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
 
-    private Map<Vector2d, Plant> plants = new LinkedHashMap<>();
+    private final Map<Vector2d, Plant> plants = new LinkedHashMap<>();
 
     private final Rectangle area = new Rectangle(new Vector2d(0,0), new Vector2d(Config.EVOLUTION_MAP_WIDTH-1, Config.EVOLUTION_MAP_HEIGHT-1));
     private final Rectangle jungle = new Rectangle(new Vector2d((Config.EVOLUTION_MAP_WIDTH-Config.JUNGLE_WIDTH)/2,(Config.EVOLUTION_MAP_HEIGHT-Config.JUNGLE_HEIGHT)/2),
             new Vector2d((Config.EVOLUTION_MAP_WIDTH-Config.JUNGLE_WIDTH)/2+Config.JUNGLE_WIDTH, (Config.EVOLUTION_MAP_HEIGHT-Config.JUNGLE_HEIGHT)/2+Config.JUNGLE_HEIGHT));
 
 
-    public ArrayList<Animal>[][] animalList = new ArrayList[this.getTopRightCorner().x-this.getBottomLeftCorner().x+1][];
+    private final ArrayList[][] animalList = new ArrayList[this.getTopRightCorner().x-this.getBottomLeftCorner().x+1][];
 
-    public EvolutionMap(){
+    EvolutionMap(){
         for(int i =0; i<this.getTopRightCorner().x-this.getBottomLeftCorner().x+1; i++) {
             this.animalList[i] = new ArrayList[this.getTopRightCorner().y - this.getBottomLeftCorner().y + 1];
         }
@@ -43,7 +40,7 @@ public class EvolutionMap extends AbstractWorldMap {
         return  freePositionsWithForbiddenArea(this.area, null);
     }
 
-    public ArrayList<Vector2d> freePositionsWithForbiddenArea(Rectangle area, Rectangle forbidden){
+    private ArrayList<Vector2d> freePositionsWithForbiddenArea(Rectangle area, Rectangle forbidden){
         ArrayList<Vector2d> freePos= new ArrayList<>();
         for(int i=area.getBottomLeftCorner().x; i<= area.getTopRightCorner().x; i++){
             for(int j=area.getBottomLeftCorner().y; j<= area.getTopRightCorner().y; j++){
@@ -61,11 +58,11 @@ public class EvolutionMap extends AbstractWorldMap {
     public Vector2d getRandomFreePosition(Rectangle area){
         return this.getRandomFreePositionWithForbiddenArea(area, null);
     }
-    public Vector2d getRandomFreePosition(){
+    Vector2d getRandomFreePosition(){
         return this.getRandomFreePositionWithForbiddenArea(this.area, null);
     }
 
-    public Vector2d getRandomFreePositionWithForbiddenArea(Rectangle area, Rectangle forbidden){
+    private Vector2d getRandomFreePositionWithForbiddenArea(Rectangle area, Rectangle forbidden){
         ArrayList<Vector2d> freePos= this.freePositionsWithForbiddenArea(area, forbidden);
         if(freePos.size() == 0) return null;
         Random r = new Random();
@@ -81,22 +78,15 @@ public class EvolutionMap extends AbstractWorldMap {
         Vector2d position = this.getRandomFreePositionWithForbiddenArea(areaToPlant, areaForbidden);
         Plant g = new Plant(position);
         this.plants.put(position, g);
-        return;
     }
 
-    public boolean place(Animal animal){
-//        if(!this.canMoveTo(animal.getPosition())){
-//            throw new IllegalArgumentException("na polu: " + animal.getPosition().toString() + " nie można umieścić zwierzęcia");
-//        }
-//        animal.addObserver(this);
-//        this.animals.put(animal.getPosition(), animal);
+    public void place(Animal animal){
         this.animalsAt(animal.getPosition()).add(animal);
         animal.addObserver(this);
-        return true;
     }
 
 
-    public Plant plantAt(Vector2d position){
+    private Plant plantAt(Vector2d position){
                 if(this.plants.get(position) == null){
                     return null;
                 }
@@ -123,11 +113,11 @@ public class EvolutionMap extends AbstractWorldMap {
         }
     }
 
-    public ArrayList<Animal> animalsAt(Vector2d position){
+    private ArrayList<Animal> animalsAt(Vector2d position){
         return this.animalList[position.x][position.y];
     }
 
-    public ArrayList<Animal> allAnimals(){
+    private ArrayList<Animal> allAnimals(){
         ArrayList<Animal> allanimals = new ArrayList<>();
         for(int i =0; i<this.getTopRightCorner().x-this.getBottomLeftCorner().x+1; i++) {
             for(int j =0; j<this.getTopRightCorner().y-this.getBottomLeftCorner().y+1; j++) {
@@ -179,17 +169,17 @@ public class EvolutionMap extends AbstractWorldMap {
     private void eatPlant(Animal a, Plant g){
         a.addEnergy(g.getSize());
         this.plants.remove(g.getPosition());
-    };
+    }
 
     public boolean canMoveTo(Vector2d position){
         return true; //Currently animals can always move to position
     }
 
 
-    public Vector2d getTopRightCorner(){
+    Vector2d getTopRightCorner(){
         return this.area.getTopRightCorner();
     }
-    public Vector2d getBottomLeftCorner(){
+    Vector2d getBottomLeftCorner(){
         return this.area.getBottomLeftCorner();
     }
 
@@ -198,14 +188,14 @@ public class EvolutionMap extends AbstractWorldMap {
         if(animals.size()==0) return false;
         animals.remove(a);
         return true;
-//        if(animals.get(a.getPosition()) != null){
+        //        if(animals.get(a.getPosition()) != null){
 //            animals.remove(a.getPosition());
 //            return true;
 //        }
 //        else return false;
     }
 
-    public Vector2d convertToPositionInMap(Vector2d old){
+    private Vector2d convertToPositionInMap(Vector2d old){
         if(this.area.hasPositionInside(old)) return old;
         else{
             Integer new_x = Math.floorMod(old.x,this.getTopRightCorner().x-this.getBottomLeftCorner().x+1);
@@ -227,13 +217,13 @@ public class EvolutionMap extends AbstractWorldMap {
     }
 
 
-    public Vector2d findFreeSpot(Vector2d origin) {
+    public Vector2d findFreeSpaceNear(Vector2d original) {
         for(int x = -1; x < 2; x++){
             for(int y = -1; y < 2; y++){
                 if(x == 0 && y == 0){
                     continue;
                 }
-                Vector2d newPos = origin.add(new Vector2d(x, y));
+                Vector2d newPos = original.add(new Vector2d(x, y));
                 newPos = this.convertToPositionInMap(newPos);
                 if(this.objectAt(newPos)== null){
                     return newPos;

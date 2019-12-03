@@ -6,7 +6,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class Vector2dTest {
-    Vector2d v1, v2, v3, v4;
+    private Vector2d v1;
+    private Vector2d v2;
+    private Vector2d v3;
+    private Vector2d v4;
 
     @Before
     public void createVector(){
@@ -19,9 +22,9 @@ public class Vector2dTest {
     @Test
     public void equalsTest(){
         MapDirection dir = MapDirection.EAST;
-        assertTrue(v2.equals(v3));
-        assertFalse(v1.equals(v2));
-        assertFalse(v1.equals(dir));
+        assertEquals(v2, v3);
+        assertNotEquals(v1, v2);
+        assertNotEquals(v1, dir);
     }
 
     @Test

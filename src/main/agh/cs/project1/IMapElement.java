@@ -1,8 +1,8 @@
 package agh.cs.project1;
 
-public interface IMapElement {
-    public Vector2d getPosition();
+interface IMapElement {
+    Vector2d getPosition();
 
-    public String toString();
+    String toString();
 
 }

@@ -8,7 +8,10 @@ import static org.junit.Assert.*;
 
 public class RectangleTest {
 
-    Rectangle a, b, c, d;
+    private Rectangle a;
+    private Rectangle b;
+    private Rectangle c;
+    private Rectangle d;
     @Before
     public void init(){
         a = new Rectangle(new Vector2d(0,0), new Vector2d(4,9));

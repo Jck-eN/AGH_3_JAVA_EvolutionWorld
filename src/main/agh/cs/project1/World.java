@@ -13,7 +13,7 @@ public class World {
         try {
             Config.init(args[0]);
             EvolutionMap map = new EvolutionMap();
-            for(Integer j =0 ;j<Integer.valueOf(args[1]); j++){
+            for(int j = 0; j<Integer.parseInt(args[1]); j++){
                 Animal tmp = new Animal(map, map.getRandomFreePosition());
             }
             for(int i=0; i<100000; i++){
@@ -36,6 +36,8 @@ public class World {
             System.out.println(ex2.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NoClassDefFoundError ex){
+            System.out.println("test");
         }
 
 

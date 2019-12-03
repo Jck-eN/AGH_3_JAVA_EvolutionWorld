@@ -9,7 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
-public class Config {
+class Config {
     public static Integer EVOLUTION_MAP_WIDTH = 100;
     public static Integer EVOLUTION_MAP_HEIGHT = 30;
     public static Integer JUNGLE_WIDTH = 10;
@@ -33,11 +33,7 @@ public class Config {
             Config.PLANT_MAX_SIZE = Math.toIntExact((Long) jo.get("maxPlantSize"));
             Config.JUNGLE_HEIGHT = Math.toIntExact(Math.round(Double.valueOf(Config.EVOLUTION_MAP_HEIGHT) * (Double) jo.get("jungleRatio")));
             Config.JUNGLE_WIDTH = Math.toIntExact(Math.round(Double.valueOf(Config.EVOLUTION_MAP_WIDTH) * (Double) jo.get("jungleRatio")));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }

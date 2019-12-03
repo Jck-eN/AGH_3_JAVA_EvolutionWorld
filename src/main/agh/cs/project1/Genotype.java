@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Genotype {
     private static final Integer GENOTYPE_LENGTH = 32;
-    Integer[] genes;
+    private final Integer[] genes;
 
     public Genotype(){
         Random r = new Random();
@@ -17,7 +17,7 @@ public class Genotype {
         Arrays.sort(genes);
     }
 
-    public Genotype(Integer[] g){
+    Genotype(Integer[] g){
         genes = Arrays.copyOf(g, GENOTYPE_LENGTH);
         Arrays.sort(genes);
     }
@@ -61,9 +61,7 @@ public class Genotype {
             newGenotypeParts[i] = Arrays.copyOfRange(from.genes, begin, end);
         }
         for(Integer[] part : newGenotypeParts){
-            for( Integer gene : part){
-                newGenes.add(gene);
-            }
+            newGenes.addAll(Arrays.asList(part));
         }
 
         Integer[] newGenesArray = new Integer[newGenes.size()];
@@ -82,7 +80,10 @@ public class Genotype {
         for(Integer i=0; i<8; i++){
             boolean found = false;
             for(Integer gene : genes){
-                if(gene==i) found = true;
+                if (gene.equals(i)) {
+                    found = true;
+                    break;
+                }
             }
             if(!found){
                 forceAddGene(genes, i);
