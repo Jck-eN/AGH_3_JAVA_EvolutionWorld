@@ -7,8 +7,16 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 public class EvolutionMapTest {
 
-    EvolutionMap map = new EvolutionMap();
-    Animal a1,a2,a3,a4,a5,a6, a7, a8, a9;
+    private final EvolutionMap map = new EvolutionMap();
+    private Animal a1;
+    private Animal a2;
+    private Animal a3;
+    private Animal a4;
+    private Animal a5;
+    private Animal a6;
+    private Animal a7;
+    private Animal a8;
+    private Animal a9;
 
     @Before
     public void init(){

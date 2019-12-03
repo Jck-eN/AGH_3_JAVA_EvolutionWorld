@@ -22,13 +22,12 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
                 animalList[i][j] = new ArrayList<Animal>();
             }
         }
-        System.out.println("test");
     }
 
     private Vector2d getRandomPosition(Rectangle area){
         Random r = new Random();
-        int x = r.nextInt((int) area.getTopRightCorner().x-area.getBottomLeftCorner().x+1);
-        int y = r.nextInt((int) area.getTopRightCorner().y-area.getBottomLeftCorner().y+1);
+        int x = r.nextInt(area.getTopRightCorner().x -area.getBottomLeftCorner().x+1);
+        int y = r.nextInt(area.getTopRightCorner().y -area.getBottomLeftCorner().y+1);
         return new Vector2d(area.getBottomLeftCorner().x+x, area.getBottomLeftCorner().y+y);
     }
 
@@ -81,6 +80,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
     }
 
     public void place(Animal animal){
+        if(animal == null) throw new IllegalArgumentException("Brak zwierzęcia do dodania");
         this.animalsAt(animal.getPosition()).add(animal);
         animal.addObserver(this);
     }
@@ -113,7 +113,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         }
     }
 
-    private ArrayList<Animal> animalsAt(Vector2d position){
+    private ArrayList animalsAt(Vector2d position){
         return this.animalList[position.x][position.y];
     }
 
@@ -172,7 +172,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
     }
 
     public boolean canMoveTo(Vector2d position){
-        return true; //Currently animals can always move to position
+        return true;                            //Currently animals can always move to position
     }
 
 
@@ -188,11 +188,6 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         if(animals.size()==0) return false;
         animals.remove(a);
         return true;
-        //        if(animals.get(a.getPosition()) != null){
-//            animals.remove(a.getPosition());
-//            return true;
-//        }
-//        else return false;
     }
 
     private Vector2d convertToPositionInMap(Vector2d old){
@@ -205,11 +200,8 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
     }
 
     public void positionChanged(Animal a, Vector2d oldPosition, Vector2d newPosition){
-//        Animal a = this.animals.get(oldPosition);
         this.animalsAt(oldPosition).remove(a);
         this.animalsAt(newPosition).add(a);
-//        this.animals.remove(oldPosition);
-//        this.animals.put(newPosition, a);
     }
 
     public String toString() {

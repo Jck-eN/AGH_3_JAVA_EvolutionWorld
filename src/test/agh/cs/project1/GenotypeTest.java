@@ -6,7 +6,13 @@ import org.junit.Test;
 
 public class GenotypeTest {
 
-    Genotype g1,g2,g3, g4, g5, g7, g8;
+    private Genotype g1;
+    private Genotype g2;
+    private Genotype g3;
+    private Genotype g4;
+    private Genotype g5;
+    private Genotype g7;
+    private Genotype g8;
     @Before
     public void init() {
         Integer[] g1arr = {1,2,3,3,4,6,5,7,7,7,0,0,2,5,3,5,4,5,4,7,3,4,5,6,6,7,7,7,7,7,1,1};

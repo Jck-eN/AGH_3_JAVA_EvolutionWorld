@@ -4,14 +4,20 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class AnimalTest {
 
 
 
-    EvolutionMap map = new EvolutionMap();
-    Animal a1,a2,a3,a4,a5,a6, a7, a8, a9;
+    private final EvolutionMap map = new EvolutionMap();
+    private Animal a1;
+    private Animal a2;
+    private Animal a3;
+    private Animal a4;
+    private Animal a5;
+    private Animal a6;
+    private Animal a7;
+    private Animal a8;
+    private Animal a9;
 
     @Before
     public void init(){
@@ -45,28 +51,28 @@ public class AnimalTest {
 
     @Test
     public void getEnergy() {
-        Assert.assertTrue(a1.getEnergy().equals(Config.DEFAULT_ENERGY));
-        Assert.assertFalse(a2.getEnergy().equals(-10));
+        Assert.assertEquals(a1.getEnergy(), Config.DEFAULT_ENERGY);
+        Assert.assertNotEquals((int) a2.getEnergy(), -10);
         a1.lostEnergy(10);
-        Assert.assertTrue(a1.getEnergy().equals(Config.DEFAULT_ENERGY-10));
+        Assert.assertEquals((int) a1.getEnergy(), Config.DEFAULT_ENERGY - 10);
     }
 
     @Test
     public void addEnergy() {
         a1.addEnergy(10);
         a2.addEnergy(3);
-        Assert.assertTrue(a1.getEnergy().equals(Config.DEFAULT_ENERGY+10));
-        Assert.assertTrue(a2.getEnergy().equals(Config.DEFAULT_ENERGY+3));
-        Assert.assertFalse(a3.getEnergy().equals(Config.DEFAULT_ENERGY-1));
+        Assert.assertEquals((int) a1.getEnergy(), Config.DEFAULT_ENERGY + 10);
+        Assert.assertEquals((int) a2.getEnergy(), Config.DEFAULT_ENERGY + 3);
+        Assert.assertNotEquals((int) a3.getEnergy(), Config.DEFAULT_ENERGY - 1);
 
     }
 
     @Test
     public void lostEnergy() {
         a1.lostEnergy(10);
-        Assert.assertTrue(a1.getEnergy().equals(Config.DEFAULT_ENERGY-10));
+        Assert.assertEquals((int) a1.getEnergy(), Config.DEFAULT_ENERGY - 10);
         a1.lostEnergy(Config.DEFAULT_ENERGY);
-        Assert.assertTrue(a1.getEnergy().equals(-10));
+        Assert.assertEquals((int) a1.getEnergy(), -10);
     }
 
 

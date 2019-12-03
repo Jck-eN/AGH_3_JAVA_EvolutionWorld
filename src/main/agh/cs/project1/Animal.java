@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Animal implements IMapElement {
-    public static Integer animalCount = 0;
     private final IWorldMap map;
     private MapDirection direction;
     private Vector2d position;

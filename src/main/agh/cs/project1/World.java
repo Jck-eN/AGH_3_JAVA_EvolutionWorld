@@ -1,8 +1,6 @@
 package agh.cs.project1;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class World {
     public static void main(String[] args) {
@@ -14,7 +12,7 @@ public class World {
             Config.init(args[0]);
             EvolutionMap map = new EvolutionMap();
             for(int j = 0; j<Integer.parseInt(args[1]); j++){
-                Animal tmp = new Animal(map, map.getRandomFreePosition());
+                new Animal(map, map.getRandomFreePosition());
             }
             for(int i=0; i<100000; i++){
                 map.run();
@@ -36,8 +34,6 @@ public class World {
             System.out.println(ex2.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (NoClassDefFoundError ex){
-            System.out.println("test");
         }
 
 

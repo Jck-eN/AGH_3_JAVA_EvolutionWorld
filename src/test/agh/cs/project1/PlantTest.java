@@ -3,13 +3,12 @@ package agh.cs.project1;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-
-import static org.junit.Assert.*;
 
 public class PlantTest {
 
-    Plant p1,p2,p3;
+    private Plant p1;
+    private Plant p2;
+    private Plant p3;
 
     @Before
     public void init(){

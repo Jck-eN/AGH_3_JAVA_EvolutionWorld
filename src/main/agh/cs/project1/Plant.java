@@ -10,10 +10,6 @@ public class Plant implements IMapElement {
     public Plant(Vector2d position){
         this.position = position;
     }
-    public Plant(Vector2d position, Integer size){
-        this(position);
-        this.size = size;
-    }
 
     public void grow(Integer growSize){
         this.size+=growSize;

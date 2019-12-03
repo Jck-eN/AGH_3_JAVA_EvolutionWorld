@@ -1,6 +1,6 @@
 package agh.cs.project1;
 
-public class Rectangle {
+class Rectangle {
     private final Vector2d topRightCorner;
     private final Vector2d bottomLeftCorner;
 

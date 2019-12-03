@@ -22,11 +22,6 @@ public class Genotype {
         Arrays.sort(genes);
     }
 
-
-    public Integer[] toArray(){
-        return this.genes;
-    }
-
     public String toString(){
         return Arrays.toString(this.genes);
     }
@@ -89,7 +84,6 @@ public class Genotype {
                 forceAddGene(genes, i);
             }
         }
-        return;
     }
 
     private void forceAddGene(Integer[] genes, Integer gene_no){
