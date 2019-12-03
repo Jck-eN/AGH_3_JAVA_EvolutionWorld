@@ -127,5 +127,5 @@ public class Animal implements IMapElement {
                 this.genotype.merge(other.genotype));
 
     }
-    
+
 }
