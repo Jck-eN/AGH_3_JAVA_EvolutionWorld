@@ -7,13 +7,12 @@ import java.util.LinkedList;
 public class World {
     public static void main(String[] args) {
         if(args.length < 2){
-            System.out.println("program <config.json>");
+            System.out.println("program <config.json> <number_of_animals");
             System.exit(1);
         }
         try {
             Config.init(args[0]);
             EvolutionMap map = new EvolutionMap();
-            //    IWorldMap map = new RectangularMap(10, 5);
             for(Integer j =0 ;j<Integer.valueOf(args[1]); j++){
                 Animal tmp = new Animal(map, map.getRandomFreePosition());
             }

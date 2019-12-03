@@ -12,11 +12,9 @@ public class Animal implements IMapElement {
     private List<IPositionChangeObserver> observers = new ArrayList<>();
     private Genotype genotype;
     private Integer energy = Config.DEFAULT_ENERGY;
-    private Integer id;
 
 
     public Animal(IWorldMap map, Vector2d initialPosition){
-        this.id = Animal.animalCount++;
         this.direction = this.generateRandomDirection();
         this.map = map;
         this.position = initialPosition;
@@ -81,7 +79,7 @@ public class Animal implements IMapElement {
 
     private void positionChanged(Vector2d oldPosition, Vector2d newPosition){
         for(IPositionChangeObserver o : observers){
-           o.positionChanged(oldPosition, newPosition);
+           o.positionChanged(this, oldPosition, newPosition);
         }
     }
     public Integer getEnergy(){
@@ -113,7 +111,7 @@ public class Animal implements IMapElement {
     }
 
     public Animal createNewAnimal(Animal other){
-        Vector2d freePosition = this.findFreeSpot();
+        Vector2d freePosition = this.map.findFreeSpot(this.getPosition());
         if(this.getEnergy() < Config.REQUIRED_ENERGY || other.getEnergy() < Config.REQUIRED_ENERGY || freePosition == null){
             return null;
         }
@@ -129,20 +127,5 @@ public class Animal implements IMapElement {
                 this.genotype.merge(other.genotype));
 
     }
-
-    private Vector2d findFreeSpot() {
-        Vector2d origin = this.getPosition();
-        for(int x = -1; x < 2; x++){
-            for(int y = -1; y < 2; y++){
-                if(x == 0 && y == 0){
-                    continue;
-                }
-                Vector2d newPos = new Vector2d(x, y).add(origin);
-                if(this.map.objectAt(newPos)== null){
-                    return newPos;
-                }
-            }
-        }
-        return null;
-    }
+    
 }

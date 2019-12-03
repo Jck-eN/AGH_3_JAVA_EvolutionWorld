@@ -17,8 +17,8 @@ public class Config {
     public static Integer PLANT_MAX_SIZE = 10;
     public static Integer PLANT_DEFAULT_SIZE = 5;
     public static Integer ENERGY_LOST_PER_MOVE = 1;
-    public static Integer REQUIRED_ENERGY = 200;
-    public static Integer DEFAULT_ENERGY = 400;
+    public static Integer REQUIRED_ENERGY = 100;
+    public static Integer DEFAULT_ENERGY = 200;
 
     public static void init(String filename){
         JSONParser parser = new JSONParser();

@@ -54,4 +54,6 @@ public interface IWorldMap {
     Object objectAt(Vector2d position);
 
     boolean remove(Animal animal);
+
+    Vector2d findFreeSpot(Vector2d position);
 }
