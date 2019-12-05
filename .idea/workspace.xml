@@ -2,30 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_googlecode_json_simple_json_simple_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGH_3_JAVA_EvolutionWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AGH_3_JAVA_EvolutionWorld.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/EvolutionMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/EvolutionMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Genotype.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Genotype.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/MapVisualizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/MapVisualizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Plant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Plant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Rectangle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/AnimalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/AnimalTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/GenotypeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/GenotypeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Genotype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Genotype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapVisualizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Plant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Rectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/project1/AnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/project1/AnimalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/project1/EvolutionMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/project1/EvolutionMapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/project1/GenotypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/project1/GenotypeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/project1/PlantTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/project1/PlantTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +44,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/json-simple-1.1.1.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -188,6 +173,8 @@
       <updated>1575052520214</updated>
       <workItem from="1575052525637" duration="3098000" />
       <workItem from="1575384959584" duration="12016000" />
+      <workItem from="1575397992071" duration="94000" />
+      <workItem from="1575448939221" duration="2627000" />
     </task>
     <servers />
   </component>
@@ -215,6 +202,9 @@
           <option name="timeStamp" value="40" />
         </breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
