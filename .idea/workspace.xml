@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_googlecode_json_simple_json_simple_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AGH_3_JAVA_EvolutionWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AGH_3_JAVA_EvolutionWorld.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/World.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +37,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/json-simple-1.1.1.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -175,6 +168,7 @@
       <workItem from="1575384959584" duration="12016000" />
       <workItem from="1575397992071" duration="94000" />
       <workItem from="1575448939221" duration="2627000" />
+      <workItem from="1575666529081" duration="1932000" />
     </task>
     <servers />
   </component>
@@ -201,10 +195,12 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="40" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/agh/cs/project1/World.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
       </breakpoints>
-      <default-breakpoints>
-        <breakpoint enabled="true" type="java-exception" />
-      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
