@@ -14,27 +14,30 @@ public class World {
             for(int j = 0; j<Integer.parseInt(args[1]); j++){
                 new Animal(map, map.getRandomFreePosition());
             }
-            for(int i=0; i<100000; i++){
-                map.run();
-                if(i%100==0){
-                    System.out.println(map);
-                    System.out.println("Tura: " +i);
-                    Thread.sleep(100);
-                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                }
-            }
-            System.out.println(map);
-            System.out.println("koniec");
+            MapSimulation sim = new MapSimulation(map,50);
+            sim.startSimulation();
+
+//            for(int i=0; i<100000; i++){
+//                map.run();
+//                if(i%100==0){
+//                    System.out.println(map);
+//                    System.out.println("Tura: " +i);
+//                    Thread.sleep(100);
+//                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+//                }
+//            }
+//            System.out.println(map);
+//            System.out.println("koniec");
         }
         catch (IllegalArgumentException ex){
             System.out.println(ex.getMessage());
             System.exit(1);
         }
-        catch (InterruptedException ex2){
-            System.out.println(ex2.getMessage());
-        } catch (IOException e) {
-            e.printStackTrace();
-    }
+//        catch (InterruptedException ex2){
+//            System.out.println(ex2.getMessage());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//    }
 
 
 

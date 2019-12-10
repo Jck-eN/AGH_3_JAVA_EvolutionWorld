@@ -4,7 +4,7 @@ import java.util.*;
 
 public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
 
-    private final Map<Vector2d, Plant> plants = new LinkedHashMap<>();
+    public final Map<Vector2d, Plant> plants = new LinkedHashMap<>();
 
     private final Rectangle area = new Rectangle(new Vector2d(0,0), new Vector2d(Config.EVOLUTION_MAP_WIDTH-1, Config.EVOLUTION_MAP_HEIGHT-1));
     private final Rectangle jungle = new Rectangle(new Vector2d((Config.EVOLUTION_MAP_WIDTH-Config.JUNGLE_WIDTH)/2,(Config.EVOLUTION_MAP_HEIGHT-Config.JUNGLE_HEIGHT)/2),
@@ -57,7 +57,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
     public Vector2d getRandomFreePosition(Rectangle area){
         return this.getRandomFreePositionWithForbiddenArea(area, null);
     }
-    Vector2d getRandomFreePosition(){
+    public Vector2d getRandomFreePosition(){
         return this.getRandomFreePositionWithForbiddenArea(this.area, null);
     }
 
@@ -117,7 +117,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         return this.animalList[position.x][position.y];
     }
 
-    private ArrayList<Animal> allAnimals(){
+    public ArrayList<Animal> allAnimals(){
         ArrayList<Animal> allanimals = new ArrayList<>();
         for(int i =0; i<this.getTopRightCorner().x-this.getBottomLeftCorner().x+1; i++) {
             for(int j =0; j<this.getTopRightCorner().y-this.getBottomLeftCorner().y+1; j++) {
@@ -224,4 +224,14 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         }
         return null;
     }
+
+    public Vector2d getJungleBottomLeft(){
+        return this.jungle.getBottomLeftCorner();
+    }
+
+    public Vector2d getJungleTopRight(){
+        return this.jungle.getTopRightCorner();
+    }
+
+
 }
