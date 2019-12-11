@@ -4,34 +4,56 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * Genotype of the animal
+ *
+ * @author Jacek N.
+ */
 public class Genotype {
     private static final Integer GENOTYPE_LENGTH = 32;
-    Integer[] genes;
+    private final Integer[] genes;
 
-    public Genotype(){
+    /**
+     * Generates random genotype with at least one gene of each kind,
+     */
+    Genotype(){
         Random r = new Random();
-        genes = new Integer[GENOTYPE_LENGTH];
-        for(int i=0; i<genes.length; i++){
-            genes[i] = r.nextInt(8);
+        this.genes = new Integer[GENOTYPE_LENGTH];
+        for(int i=0; i<8; i++){
+            this.genes[i]=i;
+        }
+        for(int i=8; i<this.genes.length; i++){
+            this.genes[i] = r.nextInt(8);
         }
         Arrays.sort(genes);
     }
 
-    public Genotype(Integer[] g){
-        genes = Arrays.copyOf(g, GENOTYPE_LENGTH);
+    /**
+     * Generates genotype base on array of integers
+     *
+     * @param g array of genes (integers)
+     */
+    Genotype(Integer[] g){
+        this.genes = Arrays.copyOf(g, GENOTYPE_LENGTH);
         Arrays.sort(genes);
     }
 
-
-    public Integer[] toArray(){
-        return this.genes;
-    }
-
+    /**
+     *
+     * @return string containing all genes
+     */
     public String toString(){
         return Arrays.toString(this.genes);
     }
 
-    public Genotype merge(Genotype other){
+    /**
+     * Merge two genotypes creating new genotype based on rules
+     * defined in project description
+     *
+     * @param other genotype to merge with
+     * @return merged genotype
+     */
+    Genotype merge(Genotype other){
         Random r = new Random();
         Integer[] indexes =new Integer[3];
         indexes[0] = 0;
@@ -61,36 +83,53 @@ public class Genotype {
             newGenotypeParts[i] = Arrays.copyOfRange(from.genes, begin, end);
         }
         for(Integer[] part : newGenotypeParts){
-            for( Integer gene : part){
-                newGenes.add(gene);
-            }
+            newGenes.addAll(Arrays.asList(part));
         }
 
         Integer[] newGenesArray = new Integer[newGenes.size()];
         newGenesArray = newGenes.toArray(newGenesArray);
         Arrays.sort(newGenesArray);
-        this.fixGenes(newGenesArray);
+        this.fixGenes(newGenesArray); //fixes genes to meet the rules
         return new Genotype(newGenesArray);
     }
 
+    /**
+     *
+     * @return random gene from array of genes
+     */
     public Integer getRandomGene(){
         Random r = new Random();
         return this.genes[r.nextInt(GENOTYPE_LENGTH)];
     }
 
+    /**
+     * Fix genotype according to rules defined
+     * in project description
+     *
+     * @param genes array of genes to fix
+     */
     private void fixGenes(Integer[] genes){
         for(Integer i=0; i<8; i++){
             boolean found = false;
             for(Integer gene : genes){
-                if(gene==i) found = true;
+                if (gene.equals(i)) {
+                    found = true;
+                    break;
+                }
             }
             if(!found){
                 forceAddGene(genes, i);
             }
         }
-        return;
     }
 
+    /**
+     * Replace random gene in genotype which
+     * has at least two occurrences with given one
+     *
+     * @param genes array of genes we want to add gene in
+     * @param gene_no number of gene to add
+     */
     private void forceAddGene(Integer[] genes, Integer gene_no){
         Random r = new Random();
         Integer idx;
@@ -101,6 +140,12 @@ public class Genotype {
         Arrays.sort(genes);
     }
 
+    /**
+     *
+     * @param genes array of genes
+     * @param gene_no gene number to count
+     * @return number of occurrences of given gene in genes array
+     */
     private int countGenes(Integer[] genes, Integer gene_no){
         int res=0;
         for(Integer g : genes){

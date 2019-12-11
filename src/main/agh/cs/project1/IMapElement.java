@@ -1,8 +1,11 @@
 package agh.cs.project1;
 
-public interface IMapElement {
-    public Vector2d getPosition();
+/**
+ * Interface describing element on the map
+ */
+interface IMapElement {
+    Vector2d getPosition();
 
-    public String toString();
+    String toString();
 
 }

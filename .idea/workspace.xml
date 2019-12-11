@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="AGH_3_JAVA_EvolutionWorld:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AGH_3_JAVA_EvolutionWorld_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Animal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/EvolutionMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/EvolutionMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Plant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/Plant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/agh/cs/project1/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/config_tmp.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Genotype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Genotype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/IMapElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/IMapElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/IPositionChangeObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/IPositionChangeObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/IWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/IWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapSwingVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapSwingVisualizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Vector2d.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Vector2d.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,6 +30,17 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="241" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,11 +55,27 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/json-simple-1.1.1.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="agh.cs.project1" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="agh.cs.project1" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -52,20 +90,9 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.World">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="main.agh.cs.project1.Main" />
+    <configuration name="MapSwingVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.MapSwingVisualizer" />
       <module name="AGH_3_JAVA_EvolutionWorld" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="World" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.World" />
-      <module name="AGH_3_JAVA_EvolutionWorld" />
-      <option name="PROGRAM_PARAMETERS" value="D:\_ROBOCZY\config.json" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="agh.cs.project1.*" />
@@ -76,24 +103,78 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in AGH_3_JAVA_EvolutionWorld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="World" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.World" />
       <module name="AGH_3_JAVA_EvolutionWorld" />
-      <option name="PACKAGE_NAME" value="" />
+      <option name="PROGRAM_PARAMETERS" value="D:\_ROBOCZY\config.json 20" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.cs.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EvolutionMapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AGH_3_JAVA_EvolutionWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.cs.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.cs.project1" />
+      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.EvolutionMapTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlantTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AGH_3_JAVA_EvolutionWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.cs.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.cs.project1" />
+      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.PlantTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="agh.cs.project1 in AGH_3_JAVA_EvolutionWorld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AGH_3_JAVA_EvolutionWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="agh.cs.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="agh.cs.project1" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.World" />
-      <item itemvalue="JUnit.All in AGH_3_JAVA_EvolutionWorld" />
+      <item itemvalue="Application.MapSwingVisualizer" />
+      <item itemvalue="JUnit.PlantTest" />
+      <item itemvalue="JUnit.EvolutionMapTest" />
+      <item itemvalue="JUnit.agh.cs.project1 in AGH_3_JAVA_EvolutionWorld" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.World" />
-        <item itemvalue="JUnit.All in AGH_3_JAVA_EvolutionWorld" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MapSwingVisualizer" />
+        <item itemvalue="JUnit.agh.cs.project1 in AGH_3_JAVA_EvolutionWorld" />
+        <item itemvalue="JUnit.EvolutionMapTest" />
+        <item itemvalue="JUnit.PlantTest" />
       </list>
     </recent_temporary>
   </component>
@@ -108,6 +189,14 @@
       <option name="presentableId" value="Default" />
       <updated>1575052520214</updated>
       <workItem from="1575052525637" duration="3098000" />
+
+      <workItem from="1575384959584" duration="12016000" />
+      <workItem from="1575397992071" duration="94000" />
+      <workItem from="1575448939221" duration="2627000" />
+      <workItem from="1575666529081" duration="1932000" />
+      <workItem from="1576001980514" duration="82000" />
+      <workItem from="1576004481872" duration="12220000" />
+      <workItem from="1576053547900" duration="12002000" />
     </task>
     <servers />
   </component>
@@ -130,17 +219,24 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/agh/cs/project1/Config.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/agh/cs/project1/Config.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
+
+        <breakpoint type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="40" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="50" />
+        </breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AGH_3_JAVA_EvolutionWorld$World.ic" NAME="World Coverage Results" MODIFIED="1575386502289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>agh.cs.project1.*</FILTER>
+    </SUITE>
   </component>
 </project>
