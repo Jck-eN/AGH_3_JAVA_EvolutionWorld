@@ -2,6 +2,12 @@ package agh.cs.project1;
 
 import java.util.*;
 
+/**
+ * ectangular map with no borders with jungle in the middle
+ * https://github.com/apohllo/obiektowe-lab/lab8
+ *
+ * @author Jacek N.
+ */
 public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
 
     private final Map<Vector2d, Plant> plants = new LinkedHashMap<>();
@@ -14,6 +20,9 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
 
     private final ArrayList[][] animalList = new ArrayList[this.getTopRightCorner().x-this.getBottomLeftCorner().x+1][];
 
+    /**
+     *  Creates empty list of animals for each map square
+     */
     EvolutionMap(){
         for(int i =0; i<this.getTopRightCorner().x-this.getBottomLeftCorner().x+1; i++) {
             this.animalList[i] = new ArrayList[this.getTopRightCorner().y - this.getBottomLeftCorner().y + 1];
@@ -25,21 +34,13 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         }
     }
 
-    private Vector2d getRandomPosition(Rectangle area){
-        Random r = new Random();
-        int x = r.nextInt(area.getTopRightCorner().x -area.getBottomLeftCorner().x+1);
-        int y = r.nextInt(area.getTopRightCorner().y -area.getBottomLeftCorner().y+1);
-        return new Vector2d(area.getBottomLeftCorner().x+x, area.getBottomLeftCorner().y+y);
-    }
-
-    public ArrayList<Vector2d> freePositions(Rectangle area){
-        return freePositionsWithForbiddenArea(area, null);
-    }
-
-    public ArrayList<Vector2d> freePositions(){
-        return  freePositionsWithForbiddenArea(this.area, null);
-    }
-
+     /**
+     * Returns a list of Vector2d with free positions in area, that contains forbidden area inside
+     *
+     * @param area Rectangle in which we're looking for free positions
+     * @param forbidden Rectangle in which we're not looking for free positions
+     * @return  list of Vector2d positions containing no object on the map
+     */
     private ArrayList<Vector2d> freePositionsWithForbiddenArea(Rectangle area, Rectangle forbidden){
         ArrayList<Vector2d> freePos= new ArrayList<>();
         for(int i=area.getBottomLeftCorner().x; i<= area.getTopRightCorner().x; i++){
@@ -55,25 +56,45 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         return freePos;
     }
 
-    public Vector2d getRandomFreePosition(Rectangle area){
-        return this.getRandomFreePositionWithForbiddenArea(area, null);
-    }
+    /**
+     *
+     * @return random position containing no object on the map
+     */
+
     Vector2d getRandomFreePosition(){
         return this.getRandomFreePositionWithForbiddenArea(this.area, null);
     }
 
+    /**
+     *
+     * @param area Rectangle in which we're looking for free position
+     * @param forbidden Rectangle in which we're not looking for free position
+     * @return random free position on the map in area
+     */
     private Vector2d getRandomFreePositionWithForbiddenArea(Rectangle area, Rectangle forbidden){
         ArrayList<Vector2d> freePos= this.freePositionsWithForbiddenArea(area, forbidden);
         if(freePos.size() == 0) return null;
         Random r = new Random();
         int idx = r.nextInt(freePos.size());
-         return  freePos.get(idx);
+         return freePos.get(idx);
     }
 
+    /**
+     *
+     * @param areaToPlant
+     * Rectangle in which we want to add the plant
+     */
     private void addPlant(Rectangle areaToPlant){
         this.addPlant(areaToPlant, null);
     }
 
+    /**
+     *
+     * @param areaToPlant
+     *              Rectangle in which we want to add the plant
+     * @param areaForbidden
+     *              Rectangle in area in which we don't want to add a plant
+     */
     private void addPlant(Rectangle areaToPlant, Rectangle areaForbidden){
         Vector2d position = this.getRandomFreePositionWithForbiddenArea(areaToPlant, areaForbidden);
         if(position!=null){
@@ -82,13 +103,24 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         }
     }
 
+    /**
+     * Adds animal to map and binding observer to that animal
+     *
+     * @param animal
+     *          animal to add
+     */
     public void place(Animal animal){
         if(animal == null) throw new IllegalArgumentException("Brak zwierzęcia do dodania");
         this.animalsAt(animal.getPosition()).add(animal);
         animal.addObserver(this);
     }
 
-
+    /**
+     *
+     * @param position
+     *              position to check
+     * @return plant on the position, null - if there are no plants
+     */
     private Plant plantAt(Vector2d position){
                 if(this.plants.get(position) == null){
                     return null;
@@ -96,16 +128,42 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
                 else return this.plants.get(position);
     }
 
+    /**
+     *
+     * @param position
+     *            Position to check.
+     * @return  true if position is occupied
+     */
     public boolean isOccupied(Vector2d position){
         return objectAt(position) != null;
     }
 
+    /**
+     * Checks if position is occupied
+     *
+     * @param position
+     *            The position of the object.
+     * @return one object on position on the map (first animal, or if not exists - plant)
+     *          null if there are no objects
+     */
     public Object objectAt(Vector2d position){
-        ArrayList<Animal> a = this.animalsAt(position);
-        if(a.size()==0) {
+        Animal a = this.getFirstAnimalAt(position);
+        if(a!= null) return a;
+        else {
             return this.plantAt(position);
         }
-        else{                               // Returns an animal with the highest energy
+    }
+    /**
+     *  Allows to get the strongest animal on position
+     *
+     * @param position position which we check animals on
+     * @return animal with highest energy on position,
+     *          null, if there are no animals
+     */
+    public Animal getFirstAnimalAt(Vector2d position){
+        ArrayList<Animal> a = this.animalsAt(position);
+                             // Returns an animal with the highest energy
+            if(a.size()<1) return null;
             Animal tmp = a.get(0);
             for(Animal animal : a){
                 if(animal.getEnergy() > tmp.getEnergy()){
@@ -114,13 +172,46 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
             }
             return tmp;
         }
+
+    /**
+     *
+     * @param position position which we check animals on
+     * @return animal with second highest energy on posiiton
+     */
+    public Animal getSecondAnimalAt(Vector2d position){
+        ArrayList<Animal> animals = this.animalsAt(position);
+        if(animals.size()<2)return null;
+        Animal withHighestEnergy = (Animal)this.objectAt(position);
+        Animal withSecondEnergy = animals.get(0);
+        for(Animal animal : animals){
+            if(animal.getEnergy() <= withSecondEnergy.getEnergy()){
+                withSecondEnergy = animal;   // returns lowestEnergyAnimal
+            }
+        }
+        for(Animal animal : animals){
+            if(animal.getEnergy() >= withSecondEnergy.getEnergy() && !animal.equals(withHighestEnergy)){
+                withSecondEnergy = animal;   // returns secondHighest
+            }
+        }
+        return withSecondEnergy;
     }
 
+    /**
+     * Gives list of animals on position
+     *
+     * @param position
+     *              position to check
+     * @return ArrayList of animals on position
+     */
     private ArrayList animalsAt(Vector2d position){
         return this.animalList[position.x][position.y];
     }
 
-    public ArrayList<Animal> allAnimals(){
+    /**
+     *
+     * @return list of all animals on map
+     */
+    private ArrayList<Animal> allAnimals(){
         ArrayList<Animal> allanimals = new ArrayList<>();
         for(int i =0; i<this.getTopRightCorner().x-this.getBottomLeftCorner().x+1; i++) {
             for(int j =0; j<this.getTopRightCorner().y-this.getBottomLeftCorner().y+1; j++) {
@@ -130,36 +221,56 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         return allanimals;
     }
 
+    /**
+     * Run one day of simulation:
+     * plants grow,
+     * kill animals with energy below minimal energy to move,
+     * turn animals,
+     * move animals,
+     * eat plants,
+     * seed plants
+     */
     public void run(){
         for(Plant plant : plants.values()){     // Grow plants
             plant.grow(1);
         }
-        ArrayList<Animal> tmpAnimalList = this.allAnimals();
+        ArrayList<Animal> allAnimalList = this.allAnimals();
 
 
-        for(Animal a : tmpAnimalList) {         //Kill animals with energy below zero
-            if(a.getEnergy() <= 0 ){
+        for(Animal a : allAnimalList) {         //Kill animals with energy below zero
+            if(a.getEnergy() < Config.ENERGY_LOST_PER_MOVE ){
                 a.die();
             }
         }
 
-        tmpAnimalList = this.allAnimals();
+        allAnimalList = this.allAnimals();
 
-        for(Animal a : tmpAnimalList) {         // Turn animals
+        for(Animal a : allAnimalList) {         // Turn animals
             a.rotate();
         }
 
-        for(Animal a : tmpAnimalList){
+        for(Animal a : allAnimalList){          //Move animals
 
             Vector2d probablyNewPosition = a.getPosition().add(a.getDirection().toUnitVector());
             Vector2d newPosition = this.convertToPositionInMap(probablyNewPosition);
-            Object elementOnNewPosition = this.objectAt(newPosition);
             a.move(newPosition);
-            if (elementOnNewPosition instanceof Plant) {
-                this.eatPlant(a, (Plant) elementOnNewPosition);
+
+        }
+        for(int x=0; x<Config.EVOLUTION_MAP_WIDTH;x++){                 //Eating plants
+            for(int y = 0; y< Config.EVOLUTION_MAP_HEIGHT; y++){
+                Plant plant_tmp = plantAt(new Vector2d(x, y));
+                Animal animal_tmp = getFirstAnimalAt(new Vector2d(x, y));
+                if(plant_tmp!=null && animal_tmp!= null){
+                    this.eatPlant(animal_tmp,plant_tmp);
+                }
             }
-            else if (elementOnNewPosition instanceof Animal) {
-                a.createNewAnimal((Animal) elementOnNewPosition);
+        }
+
+        for(int x=0; x<Config.EVOLUTION_MAP_WIDTH;x++){                 //Creating new animals
+            for(int y = 0; y< Config.EVOLUTION_MAP_HEIGHT; y++){
+                if(animalsAt(new Vector2d(x, y)).size()>=2){
+                    this.getFirstAnimalAt(new Vector2d(x, y)).createNewAnimal(this.getSecondAnimalAt(new Vector2d(x, y)));
+                }
             }
         }
 
@@ -170,30 +281,55 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         this.addPlant(this.area, this.jungle);  //Outside the jungle
     }
 
-    private void eatPlant(Animal a, Plant g){
-        a.addEnergy(g.getSize());
-        this.plants.remove(g.getPosition());
+    /**
+     * Animal eats plant
+     *
+     * @param animal animal eating plant
+     * @param plant plant to eat
+     */
+    private void eatPlant(Animal animal, Plant plant){
+        animal.addEnergy(plant.getSize());
+        this.plants.remove(plant.getPosition());
     }
 
     public boolean canMoveTo(Vector2d position){
         return true;                            //Currently animals can always move to position
     }
 
-
+    /**
+     *
+     * @return top right corner of the map
+     */
     Vector2d getTopRightCorner(){
         return this.area.getTopRightCorner();
     }
+
+    /**
+     *
+     * @return bottom left corner of the map
+     */
     Vector2d getBottomLeftCorner(){
         return this.area.getBottomLeftCorner();
     }
 
-    public boolean remove(Animal a){
-        ArrayList<Animal> animals = this.animalsAt(a.getPosition());
+    /**
+     *
+     * @param animalToRemove animal that must be removed from the map
+     * @return true if deleting animal has finished with success
+     */
+    public boolean remove(Animal animalToRemove){
+        ArrayList<Animal> animals = this.animalsAt(animalToRemove.getPosition());
         if(animals.size()==0) return false;
-        animals.remove(a);
+        animals.remove(animalToRemove);
         return true;
     }
 
+    /**
+     * Converts position to proper position in map
+     *
+     * @param old position we want to convert
+     * @return proper position on the map
+     */
     private Vector2d convertToPositionInMap(Vector2d old){
         if(this.area.hasPositionInside(old)) return old;
         else{
@@ -203,12 +339,24 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         }
     }
 
-    public void positionChanged(Animal a, Vector2d oldPosition, Vector2d newPosition){
-        this.animalsAt(oldPosition).remove(a);
-        this.animalsAt(newPosition).add(a);
+    /**
+     * Moves animal to new position and change
+     * list containing that animal
+     *
+     * @param animal animal to move
+     * @param oldPosition old position of animal
+     * @param newPosition new position of animal
+     */
+    public void positionChanged(Animal animal, Vector2d oldPosition, Vector2d newPosition){
+        this.animalsAt(oldPosition).remove(animal);
+        this.animalsAt(newPosition).add(animal);
     }
 
-
+    /**
+     *
+     * @param original base position
+     * @return random free position around base position
+     */
     public Vector2d findFreeSpaceNear(Vector2d original) {
         for(int x = -1; x < 2; x++){
             for(int y = -1; y < 2; y++){
@@ -225,11 +373,18 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         return null;
     }
 
+    /**
+     *
+     * @return jungle inside map
+     */
     Rectangle getJungle(){
         return this.jungle;
     }
 
-
+    /**
+     *
+     * @return current day of simulation
+     */
     Integer getDay() {
         return day;
     }

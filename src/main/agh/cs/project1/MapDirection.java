@@ -1,5 +1,10 @@
 package agh.cs.project1;
 
+/**
+ * Directions that animals can move
+ *
+ * @author Jacek N.
+ */
 public enum MapDirection {
     NORTH,
     NORTH_EAST,
@@ -10,7 +15,10 @@ public enum MapDirection {
     WEST,
     NORTH_WEST ;
 
-
+    /**
+     *
+     * @return name of direction in polish language
+     */
     public String toString() {
         switch(this){
             case EAST: return "Wschód";
@@ -25,16 +33,11 @@ public enum MapDirection {
         }
     }
 
-    public MapDirection next(){
-        int idx = (this.ordinal() + 1) % MapDirection.values().length;
-        return MapDirection.values()[idx];
-    }
-
-    public MapDirection previous(){
-        int idx = (this.ordinal() - 1 + MapDirection.values().length) % MapDirection.values().length;
-        return MapDirection.values()[idx];
-    }
-
+    /**
+     *
+     * @return unit vector based on direction
+     * of the length 1 (or sqrt(2) diagonally)
+     */
     public Vector2d toUnitVector(){
         Vector2d vector;
         switch(this){

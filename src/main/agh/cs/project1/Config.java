@@ -10,6 +10,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
+/**
+ * Class containing config of map and simulation
+ *
+ * @author Jacek N.
+ */
 class Config {
     public static Integer EVOLUTION_MAP_WIDTH = 100;
     public static Integer EVOLUTION_MAP_HEIGHT = 30;
@@ -21,6 +26,10 @@ class Config {
     public static Integer REQUIRED_ENERGY = 100;
     public static Integer DEFAULT_ENERGY = 200;
 
+    /**
+     *
+     * @param filename path to json we parse in order to configure simulation
+     */
     public static void init(String filename){
         try(Reader reader = new FileReader(filename)) {
             JSONObject jo =(JSONObject) new JSONParser().parse(reader);
@@ -38,6 +47,7 @@ class Config {
 
 
         } catch (IOException | ParseException e) {
+            System.out.println("Błąd parsowania JSON");
             e.printStackTrace();
         }
     }

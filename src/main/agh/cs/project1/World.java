@@ -1,5 +1,16 @@
 package agh.cs.project1;
 
+/**
+ * Main class of simulation
+ * checks if program was launched with at least two arguments
+ *  - path to config.json
+ *  - initial number of animals
+ *
+ * initializes config,
+ * starts simulation
+ *
+ * @author Jacek N.
+ */
 public class World {
     public static void main(String[] args) {
         if(args.length < 2){

@@ -8,51 +8,58 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+/**
+ * Window to show the map
+ *
+ * @author Jacek N.
+ */
 public class MapSwingVisualizer implements ActionListener {
 
-    //simulation options:
-    public final int delay;
-    public EvolutionMap map;
+    private EvolutionMap map;
 
-    //simulation necessary:
-    public JFrame frame;
-    public MapPanel mapPanel;
-    public Timer timer;
+    JFrame frame;
+    private MapPanel mapPanel;
+    private Timer timer;
 
-
-    public MapSwingVisualizer(EvolutionMap map, int delay) {
+    /**
+     * Creates a window containing panel with map
+     *
+     * @param map we want to visualize
+     * @param timeForOneDay time for showing one day of simulation in [ms]
+     */
+    MapSwingVisualizer(EvolutionMap map, int timeForOneDay) {
 
         this.map = map;
-        this.delay = delay;
 
-        timer = new Timer(delay, this);
+        this.timer = new Timer(timeForOneDay, this);
 
-        frame = new JFrame("Evolution World");
-        frame.setSize(Config.EVOLUTION_MAP_WIDTH*15, Config.EVOLUTION_MAP_HEIGHT*15);
-        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        this.frame = new JFrame("Evolution World");
+        this.frame.setSize(Config.EVOLUTION_MAP_WIDTH*15, Config.EVOLUTION_MAP_HEIGHT*15);
+        this.frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        this.frame.setLocationRelativeTo(null);
+        this.frame.setVisible(true);
 
-        mapPanel = new MapPanel(map, this);
-        mapPanel.setSize(new Dimension(1, 1));
+        this.mapPanel = new MapPanel(map, this);
+        this.mapPanel.setSize(new Dimension(1, 1));
 
 
-        frame.add(mapPanel);
-
-    }
-
-    public void startSimulation() {
-
-        timer.start();
+        this.frame.add(mapPanel);
 
     }
 
-    @Override
-    //It will executed when timer finish Counted
+    /**
+     * starts timer for each day
+     */
+    void startSimulation() {
+        this.timer.start();
+    }
+
+    /**
+     * It is executed when timer finish counting
+     */
     public void actionPerformed(ActionEvent e) {
-        mapPanel.repaint();
-        map.run();
+        this.mapPanel.repaint();
+        this.map.run();
 
     }
 

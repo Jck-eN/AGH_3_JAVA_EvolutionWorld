@@ -52,7 +52,17 @@ interface IWorldMap {
      */
     Object objectAt(Vector2d position);
 
+    /**
+     *
+     * @param animal Animal to remove.
+     * @retur True if deletion was finished with success.
+     */
     boolean remove(Animal animal);
 
+    /**
+     *
+     * @param position Base position.
+     * @return Free space around the base position.
+     */
     Vector2d findFreeSpaceNear(Vector2d position);
 }
