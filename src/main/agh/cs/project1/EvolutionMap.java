@@ -2,12 +2,12 @@ package agh.cs.project1;
 
 import java.util.*;
 
-/**
- * ectangular map with no borders with jungle in the middle
- * https://github.com/apohllo/obiektowe-lab/lab8
- *
- * @author Jacek N.
- */
+    /**
+     * ectangular map with no borders with jungle in the middle
+     * https://github.com/apohllo/obiektowe-lab/lab8
+     *
+     * @author Jacek N.
+     */
 public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
 
     private final Map<Vector2d, Plant> plants = new LinkedHashMap<>();
@@ -161,11 +161,11 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
      *          null, if there are no animals
      */
     public Animal getFirstAnimalAt(Vector2d position){
-        ArrayList<Animal> a = this.animalsAt(position);
+        ArrayList<Animal> animals = this.animalsAt(position);
                              // Returns an animal with the highest energy
-            if(a.size()<1) return null;
-            Animal tmp = a.get(0);
-            for(Animal animal : a){
+            if(animals.size()<1) return null;
+            Animal tmp = animals.get(0);
+            for(Animal animal : animals){
                 if(animal.getEnergy() > tmp.getEnergy()){
                     tmp = animal;
                 }
@@ -194,6 +194,29 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
             }
         }
         return withSecondEnergy;
+    }
+
+        /**
+         *
+         * @param position
+         * @return
+         */
+    private ArrayList<Animal> getAllAnimalsWithHighestEnergy(Vector2d position){
+        ArrayList<Animal> animals = this.animalsAt(position);
+        if(animals.size()<1) return null;
+        int maxEnergy = -1;
+        for(Animal animal : animals){
+            if(animal.getEnergy() > maxEnergy){
+                maxEnergy = animal.getEnergy();
+            }
+        }
+        ArrayList<Animal> withHighestEnergy = new ArrayList<>();
+        for(Animal animal : animals){
+            if(animal.getEnergy().equals(maxEnergy)){
+                withHighestEnergy.add(animal);
+            }
+        }
+        return withHighestEnergy;
     }
 
     /**
@@ -259,9 +282,14 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         for(int x=0; x<Config.EVOLUTION_MAP_WIDTH;x++){                 //Eating plants
             for(int y = 0; y< Config.EVOLUTION_MAP_HEIGHT; y++){
                 Plant plant_tmp = plantAt(new Vector2d(x, y));
-                Animal animal_tmp = getFirstAnimalAt(new Vector2d(x, y));
-                if(plant_tmp!=null && animal_tmp!= null){
-                    this.eatPlant(animal_tmp,plant_tmp);
+                ArrayList<Animal> animal_list = getAllAnimalsWithHighestEnergy(new Vector2d(x, y));
+                if(plant_tmp!=null && animal_list != null){
+                    if(animal_list.size()==1) {
+                        this.eatPlant(animal_list.get(0), plant_tmp);
+                    }
+                    else if(animal_list.size()>1){
+                        this.eatPlant(animal_list, plant_tmp);
+                    }
                 }
             }
         }
@@ -291,9 +319,28 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         animal.addEnergy(plant.getSize());
         this.plants.remove(plant.getPosition());
     }
+        /**
+         * Animals eat plant
+         *
+         * @param animals all animals eating plant
+         * @param plant plant to eat
+         */
+    private void eatPlant(ArrayList<Animal> animals, Plant plant){
+        for(Animal animal : animals){
+            animal.addEnergy(plant.getSize()/animals.size());
+        }
+        this.plants.remove(plant.getPosition());
+        }
 
+
+        /**
+         *
+         * @param position
+         *            The position checked for the movement possibility.
+         * @return  Always true - Currently animals can always move to position
+         */
     public boolean canMoveTo(Vector2d position){
-        return true;                            //Currently animals can always move to position
+        return true;
     }
 
     /**
