@@ -10,6 +10,6 @@ Dodatkową funkcjonalnością mojego autorstwa jest rozwój roślin, które po u
 
 Kolor zwierząt i roślin na mapie wskazuje na energię/rozmiar obiektu. Im ciemniejszy, tym większy.
 
-[Filmik przedstawiający działającą wersję programu]('https://onedrive.live.com/embed?cid=8A1C0B8E7104B4F8&resid=8A1C0B8E7104B4F8%2136438&authkey=APfo7mA_rMCJWzA')
+[Filmik przedstawiający działającą wersję programu](https://onedrive.live.com/embed?cid=8A1C0B8E7104B4F8&resid=8A1C0B8E7104B4F8%2136438&authkey=APfo7mA_rMCJWzA)
 
 Program należy uruchomić z dwoma argumentami: `<path_to_json_config> <number_of_animals>`
