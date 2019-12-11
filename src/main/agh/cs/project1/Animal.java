@@ -174,7 +174,7 @@ public class Animal implements IMapElement {
      */
     private MapDirection generateRandomDirection(){
         Random r = new Random();
-        Integer dir_no = r.nextInt(MapDirection.values().length);
+        int dir_no = r.nextInt(MapDirection.values().length);
         return MapDirection.values()[dir_no];
     }
 

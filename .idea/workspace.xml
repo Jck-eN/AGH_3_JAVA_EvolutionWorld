@@ -7,9 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json-simple-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Genotype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Genotype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/IWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/IWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapDirection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Vector2d.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Vector2d.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapSwingVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapSwingVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/project1/EvolutionMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/project1/EvolutionMapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/project1/PlantTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/project1/PlantTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +103,7 @@
     <configuration name="World" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="agh.cs.project1.World" />
       <module name="AGH_3_JAVA_EvolutionWorld" />
-      <option name="PROGRAM_PARAMETERS" value="D:\_ROBOCZY\config.json 20" />
+      <option name="PROGRAM_PARAMETERS" value="D:\_ROBOCZY\config.json 50" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="agh.cs.project1.*" />
@@ -183,7 +194,7 @@
       <workItem from="1576001980514" duration="82000" />
       <workItem from="1576004481872" duration="12220000" />
       <workItem from="1576053547900" duration="12002000" />
-      <workItem from="1576074755262" duration="4420000" />
+      <workItem from="1576074755262" duration="6843000" />
     </task>
     <servers />
   </component>

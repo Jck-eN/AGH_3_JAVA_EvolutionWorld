@@ -160,7 +160,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
      * @return animal with highest energy on position,
      *          null, if there are no animals
      */
-    public Animal getFirstAnimalAt(Vector2d position){
+    private Animal getFirstAnimalAt(Vector2d position){
         ArrayList<Animal> animals = this.animalsAt(position);
                              // Returns an animal with the highest energy
             if(animals.size()<1) return null;
@@ -177,8 +177,9 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
      *
      * @param position position which we check animals on
      * @return animal with second highest energy on position
+     *          null, if there are less than two animals
      */
-    public Animal getSecondAnimalAt(Vector2d position){
+    private Animal getSecondAnimalAt(Vector2d position){
         ArrayList<Animal> animals = this.animalsAt(position);
         if(animals.size()<2)return null;
         Animal withHighestEnergy = (Animal)this.objectAt(position);
@@ -198,8 +199,9 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
 
     /**
      *
-     * @param position
-     * @return
+     * @param position position which we check animals on
+     * @return list of animals with highest energy on position
+     *      null - if there are no animals
      */
     private ArrayList<Animal> getAllAnimalsWithHighestEnergy(Vector2d position){
         ArrayList<Animal> animals = this.animalsAt(position);
@@ -251,6 +253,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
      * turn animals,
      * move animals,
      * eat plants,
+     * create new animals
      * seed plants
      */
     public void run(){
@@ -367,8 +370,8 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
     private Vector2d convertToPositionInMap(Vector2d old){
         if(this.area.hasPositionInside(old)) return old;
         else{
-            Integer new_x = Math.floorMod(old.x,this.getTopRightCorner().x-this.getBottomLeftCorner().x+1);
-            Integer new_y = Math.floorMod(old.y,this.getTopRightCorner().y-this.getBottomLeftCorner().y+1);
+            int new_x = Math.floorMod(old.x,this.getTopRightCorner().x-this.getBottomLeftCorner().x+1);
+            int new_y = Math.floorMod(old.y,this.getTopRightCorner().y-this.getBottomLeftCorner().y+1);
             return new Vector2d(new_x, new_y);
         }
     }
@@ -390,6 +393,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
      *
      * @param original base position
      * @return random free position around base position
+     *          null - if all positions around are occupied
      */
     public Vector2d findFreeSpaceNear(Vector2d original) {
         for(int x = -1; x < 2; x++){

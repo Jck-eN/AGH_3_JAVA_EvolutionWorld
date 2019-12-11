@@ -55,7 +55,7 @@ interface IWorldMap {
     /**
      *
      * @param animal Animal to remove.
-     * @retur True if deletion was finished with success.
+     * @return True if deletion was finished with success.
      */
     boolean remove(Animal animal);
 

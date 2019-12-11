@@ -1,7 +1,5 @@
 package agh.cs.project1;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -25,6 +23,7 @@ class Config {
     public static Integer ENERGY_LOST_PER_MOVE = 1;
     public static Integer REQUIRED_ENERGY = 100;
     public static Integer DEFAULT_ENERGY = 200;
+    public static Integer SIMULATION_TIME_MS = 50;
 
     /**
      *
@@ -43,6 +42,7 @@ class Config {
             Config.PLANT_MAX_SIZE = Math.toIntExact((Long) jo.get("maxPlantSize"));
             Config.JUNGLE_HEIGHT = Math.toIntExact(Math.round(Double.valueOf(Config.EVOLUTION_MAP_HEIGHT) * (Double) jo.get("jungleRatio")));
             Config.JUNGLE_WIDTH = Math.toIntExact(Math.round(Double.valueOf(Config.EVOLUTION_MAP_WIDTH) * (Double) jo.get("jungleRatio")));
+            Config.SIMULATION_TIME_MS = Math.toIntExact((Long) jo.get("simulationTimeMs"));
 
 
 

@@ -10,8 +10,8 @@ import java.awt.*;
  */
 public class MapPanel extends JPanel {
 
-    private EvolutionMap map;
-    private MapSwingVisualizer visualizer;
+    private final EvolutionMap map;
+    private final MapSwingVisualizer visualizer;
 
     /**
      *
@@ -32,7 +32,7 @@ public class MapPanel extends JPanel {
     protected void paintComponent(Graphics graphics) {
         this.visualizer.frame.setTitle("Evolution World - Dzień: "+ this.map.getDay());
         super.paintComponent(graphics);
-        this.setSize((int) (visualizer.frame.getWidth()), visualizer.frame.getHeight());
+        this.setSize(visualizer.frame.getWidth(), visualizer.frame.getHeight());
         this.setLocation(0, 0);
         int width = this.getWidth();
         int height = this.getHeight()-40; //38 is toolbar size

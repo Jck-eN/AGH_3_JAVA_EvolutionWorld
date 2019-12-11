@@ -1,0 +1,10 @@
+{
+    "width": 70,
+    "height": 30,
+    "startEnergy": 50,
+    "moveEnergy": 1,
+    "startPlantSize": 40,
+    "maxPlantSize": 60,
+    "jungleRatio": 0.25,
+    "simulationTimeMs": 50
+}

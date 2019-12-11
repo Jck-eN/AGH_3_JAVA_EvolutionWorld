@@ -70,7 +70,7 @@ public class Genotype {
             first = other;
             second = this;
         }
-        Integer secondGenotypePartNumber = r.nextInt(indexes.length);
+        int secondGenotypePartNumber = r.nextInt(indexes.length);
         Integer[][] newGenotypeParts = new Integer[indexes.length][];
 
         ArrayList<Integer> newGenes = new ArrayList<>();
@@ -132,7 +132,7 @@ public class Genotype {
      */
     private void forceAddGene(Integer[] genes, Integer gene_no){
         Random r = new Random();
-        Integer idx;
+        int idx;
         do{
             idx = r.nextInt(GENOTYPE_LENGTH);
         }while(countGenes(genes, genes[idx]) <= 1);

@@ -22,9 +22,9 @@ public class PlantTest {
         p1.grow(0);
         p2.grow(2);
         p3.grow(Config.PLANT_MAX_SIZE);
-        Assert.assertTrue(p2.getSize().equals(Config.PLANT_DEFAULT_SIZE+2));
-        Assert.assertTrue(p3.getSize().equals(Config.PLANT_MAX_SIZE));
-        Assert.assertTrue(p1.getSize().equals(Config.PLANT_DEFAULT_SIZE));
+        Assert.assertEquals((int) p2.getSize(), Config.PLANT_DEFAULT_SIZE + 2);
+        Assert.assertEquals(p3.getSize(), Config.PLANT_MAX_SIZE);
+        Assert.assertEquals(p1.getSize(), Config.PLANT_DEFAULT_SIZE);
     }
 
     @Test
@@ -36,9 +36,9 @@ public class PlantTest {
 
     @Test
     public void getSize() {
-        Assert.assertTrue(p1.getSize().equals(Config.PLANT_DEFAULT_SIZE));
-        Assert.assertFalse(p1.getSize().equals(-10));
-        Assert.assertFalse(p2.getSize().equals(0));
+        Assert.assertEquals(p1.getSize(), Config.PLANT_DEFAULT_SIZE);
+        Assert.assertNotEquals((int) p1.getSize(), -10);
+        Assert.assertNotEquals(0, (int) p2.getSize());
     }
 
     @Test

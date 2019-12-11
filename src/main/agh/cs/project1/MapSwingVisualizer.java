@@ -1,5 +1,4 @@
 package agh.cs.project1;
-import agh.cs.project1.Animal;
 import agh.cs.project1.EvolutionMap;
 import agh.cs.project1.MapPanel;
 
@@ -15,11 +14,11 @@ import java.awt.event.ActionListener;
  */
 public class MapSwingVisualizer implements ActionListener {
 
-    private EvolutionMap map;
+    private final EvolutionMap map;
 
-    JFrame frame;
-    private MapPanel mapPanel;
-    private Timer timer;
+    final JFrame frame;
+    private final MapPanel mapPanel;
+    private final Timer timer;
 
     /**
      * Creates a window containing panel with map

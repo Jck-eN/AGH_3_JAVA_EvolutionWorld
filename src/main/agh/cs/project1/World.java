@@ -23,7 +23,7 @@ public class World {
             for(int j = 0; j<Integer.parseInt(args[1]); j++){
                 new Animal(map, map.getRandomFreePosition());
             }
-            MapSwingVisualizer sim = new MapSwingVisualizer(map,50);
+            MapSwingVisualizer sim = new MapSwingVisualizer(map,Config.SIMULATION_TIME_MS);
             sim.startSimulation();
         }
         catch (IllegalArgumentException ex){

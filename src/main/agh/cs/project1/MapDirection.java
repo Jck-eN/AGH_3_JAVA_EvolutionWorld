@@ -39,7 +39,6 @@ public enum MapDirection {
      * of the length 1 (or sqrt(2) diagonally)
      */
     public Vector2d toUnitVector(){
-        Vector2d vector;
         switch(this){
             case EAST:
                 return new Vector2d(1,0);

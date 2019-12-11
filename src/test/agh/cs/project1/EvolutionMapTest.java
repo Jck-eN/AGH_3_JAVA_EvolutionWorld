@@ -36,7 +36,7 @@ public class EvolutionMapTest {
         Object o2 = map.objectAt(new Vector2d(11,11));
         assertEquals( o, (Object) a1);
         assertEquals( o2, (Object) a2);
-        assertEquals( map.objectAt(new Vector2d(2,7)), null);
+        assertNull(map.objectAt(new Vector2d(2, 7)));
     }
 
 
