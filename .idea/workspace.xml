@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapSwingVisualizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapVisualizer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,10 +143,10 @@
     </configuration>
     <list>
       <item itemvalue="Application.World" />
+      <item itemvalue="Application.MapSwingVisualizer" />
       <item itemvalue="JUnit.PlantTest" />
       <item itemvalue="JUnit.EvolutionMapTest" />
       <item itemvalue="JUnit.agh.cs.project1 in AGH_3_JAVA_EvolutionWorld" />
-      <item itemvalue="Application.MapSwingVisualizer" />
     </list>
     <recent_temporary>
       <list>
@@ -178,6 +175,7 @@
       <workItem from="1575666529081" duration="1932000" />
       <workItem from="1576001980514" duration="82000" />
       <workItem from="1576004481872" duration="12220000" />
+      <workItem from="1576053547900" duration="2204000" />
     </task>
     <servers />
   </component>
@@ -209,6 +207,9 @@
           <option name="timeStamp" value="50" />
         </breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

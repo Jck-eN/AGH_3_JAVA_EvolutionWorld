@@ -26,7 +26,6 @@ public class Animal implements IMapElement {
         this.energy = energy;
     }
 
-
     private Animal(IWorldMap map, Vector2d initialPosition, Integer energy, Genotype genotype){
         this(map, initialPosition, energy);
         this.genotype = genotype;
@@ -126,5 +125,23 @@ public class Animal implements IMapElement {
                 this.genotype.merge(other.genotype));
 
     }
+//    public static Animal createNewAnimal(Animal first, Animal other){
+//        Vector2d freePosition = this.map.findFreeSpaceNear(this.getPosition());
+//        if(this.getEnergy() < Config.REQUIRED_ENERGY || other.getEnergy() < Config.REQUIRED_ENERGY || freePosition == null){
+//            return null;
+//        }
+//        Integer newEnergy = this.getEnergy()/4;
+//        this.lostEnergy(newEnergy);
+//        Integer otherEnergy = other.getEnergy()/4;
+//        newEnergy += otherEnergy;
+//        other.lostEnergy(otherEnergy);
+//
+//        return new Animal(this.map,
+//                freePosition,
+//                newEnergy,
+//                this.genotype.merge(other.genotype));
+//
+//    }
+
 
 }

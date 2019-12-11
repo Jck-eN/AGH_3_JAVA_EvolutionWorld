@@ -4,7 +4,7 @@ import java.util.*;
 
 public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
 
-    public final Map<Vector2d, Plant> plants = new LinkedHashMap<>();
+    private final Map<Vector2d, Plant> plants = new LinkedHashMap<>();
 
     private final Rectangle area = new Rectangle(new Vector2d(0,0), new Vector2d(Config.EVOLUTION_MAP_WIDTH-1, Config.EVOLUTION_MAP_HEIGHT-1));
     private final Rectangle jungle = new Rectangle(new Vector2d((Config.EVOLUTION_MAP_WIDTH-Config.JUNGLE_WIDTH)/2,(Config.EVOLUTION_MAP_HEIGHT-Config.JUNGLE_HEIGHT)/2),
@@ -58,7 +58,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
     public Vector2d getRandomFreePosition(Rectangle area){
         return this.getRandomFreePositionWithForbiddenArea(area, null);
     }
-    public Vector2d getRandomFreePosition(){
+    Vector2d getRandomFreePosition(){
         return this.getRandomFreePositionWithForbiddenArea(this.area, null);
     }
 
@@ -131,21 +131,21 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
     }
 
     public void run(){
-        for(Plant plant : plants.values()){
+        for(Plant plant : plants.values()){     // Grow plants
             plant.grow(1);
         }
         ArrayList<Animal> tmpAnimalList = this.allAnimals();
 
 
-        for(Animal a : tmpAnimalList) {
-            if(a.getEnergy() < 0 ){
+        for(Animal a : tmpAnimalList) {         //Kill animals with energy below zero
+            if(a.getEnergy() <= 0 ){
                 a.die();
             }
         }
 
         tmpAnimalList = this.allAnimals();
 
-        for(Animal a : tmpAnimalList) {
+        for(Animal a : tmpAnimalList) {         // Turn animals
             a.rotate();
         }
 
@@ -225,12 +225,12 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         return null;
     }
 
-    public Rectangle getJungle(){
+    Rectangle getJungle(){
         return this.jungle;
     }
 
 
-    public Integer getDay() {
+    Integer getDay() {
         return day;
     }
 }
