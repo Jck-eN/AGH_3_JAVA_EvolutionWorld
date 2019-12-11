@@ -7,10 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/config_tmp.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/project1/GenotypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/project1/GenotypeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/Vector2d.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/Vector2d.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +183,7 @@
       <workItem from="1576001980514" duration="82000" />
       <workItem from="1576004481872" duration="12220000" />
       <workItem from="1576053547900" duration="12002000" />
-      <workItem from="1576074755262" duration="4277000" />
+      <workItem from="1576074755262" duration="4420000" />
     </task>
     <servers />
   </component>

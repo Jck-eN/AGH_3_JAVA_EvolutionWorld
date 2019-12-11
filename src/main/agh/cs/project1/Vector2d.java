@@ -104,7 +104,7 @@ public class Vector2d {
     }
 
     /**
-     * Calculates hashcode based on vector coodinates
+     * Calculates hashcode based on vector coordinates
      *
      * @return calculated hashcode for vector
      */

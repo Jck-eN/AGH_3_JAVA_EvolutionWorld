@@ -50,8 +50,8 @@ public class MapPanel extends JPanel {
             for(int j=0; j< Config.EVOLUTION_MAP_HEIGHT; j++){          //for animals and plants
                 Object obj = this.map.objectAt(new Vector2d(i, j));
                 if(obj instanceof Animal) {
-                    int enegry =((Animal) obj).getEnergy();             //The darker the rectangle is, the more energy animal possess
-                    int red = 255-enegry*2;
+                    int energy =((Animal) obj).getEnergy();             //The darker the rectangle is, the more energy animal possess
+                    int red = 255-energy*2;
                     if(red<100)red=100;
                     if(red > 255) red=255;
                     graphics.setColor(new Color(red, 0, 0));

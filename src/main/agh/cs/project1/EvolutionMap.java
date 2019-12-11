@@ -176,7 +176,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
     /**
      *
      * @param position position which we check animals on
-     * @return animal with second highest energy on posiiton
+     * @return animal with second highest energy on position
      */
     public Animal getSecondAnimalAt(Vector2d position){
         ArrayList<Animal> animals = this.animalsAt(position);
@@ -235,13 +235,13 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
      * @return list of all animals on map
      */
     private ArrayList<Animal> allAnimals(){
-        ArrayList<Animal> allanimals = new ArrayList<>();
+        ArrayList<Animal> allAnimals = new ArrayList<>();
         for(int i =0; i<this.getTopRightCorner().x-this.getBottomLeftCorner().x+1; i++) {
             for(int j =0; j<this.getTopRightCorner().y-this.getBottomLeftCorner().y+1; j++) {
-                allanimals.addAll(this.animalList[i][j]);
+                allAnimals.addAll(this.animalList[i][j]);
             }
         }
-        return allanimals;
+        return allAnimals;
     }
 
     /**
