@@ -3,7 +3,7 @@ package agh.cs.project1;
 import java.util.*;
 
     /**
-     * ectangular map with no borders with jungle in the middle
+     * Rectangular map with no borders with jungle in the middle
      * https://github.com/apohllo/obiektowe-lab/lab8
      *
      * @author Jacek N.
@@ -196,11 +196,11 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         return withSecondEnergy;
     }
 
-        /**
-         *
-         * @param position
-         * @return
-         */
+    /**
+     *
+     * @param position
+     * @return
+     */
     private ArrayList<Animal> getAllAnimalsWithHighestEnergy(Vector2d position){
         ArrayList<Animal> animals = this.animalsAt(position);
         if(animals.size()<1) return null;
@@ -285,9 +285,6 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
                 ArrayList<Animal> animal_list = getAllAnimalsWithHighestEnergy(new Vector2d(x, y));
                 if(plant_tmp!=null && animal_list != null){
                     if(animal_list.size()==1) {
-                        this.eatPlant(animal_list.get(0), plant_tmp);
-                    }
-                    else if(animal_list.size()>1){
                         this.eatPlant(animal_list, plant_tmp);
                     }
                 }
@@ -309,16 +306,6 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         this.addPlant(this.area, this.jungle);  //Outside the jungle
     }
 
-    /**
-     * Animal eats plant
-     *
-     * @param animal animal eating plant
-     * @param plant plant to eat
-     */
-    private void eatPlant(Animal animal, Plant plant){
-        animal.addEnergy(plant.getSize());
-        this.plants.remove(plant.getPosition());
-    }
         /**
          * Animals eat plant
          *

@@ -8,7 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/config_tmp.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/agh/cs/project1/GenotypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/agh/cs/project1/GenotypeTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlantTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GenotypeTest.mergeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AGH_3_JAVA_EvolutionWorld" />
       <extension name="coverage">
         <pattern>
@@ -126,8 +128,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="agh.cs.project1" />
-      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.PlantTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.GenotypeTest" />
+      <option name="METHOD_NAME" value="mergeTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,17 +152,17 @@
     <list>
       <item itemvalue="Application.World" />
       <item itemvalue="Application.MapSwingVisualizer" />
-      <item itemvalue="JUnit.PlantTest" />
       <item itemvalue="JUnit.EvolutionMapTest" />
       <item itemvalue="JUnit.agh.cs.project1 in AGH_3_JAVA_EvolutionWorld" />
+      <item itemvalue="JUnit.GenotypeTest.mergeTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.World" />
-        <item itemvalue="Application.MapSwingVisualizer" />
+        <item itemvalue="JUnit.GenotypeTest.mergeTest" />
         <item itemvalue="JUnit.agh.cs.project1 in AGH_3_JAVA_EvolutionWorld" />
+        <item itemvalue="Application.MapSwingVisualizer" />
         <item itemvalue="JUnit.EvolutionMapTest" />
-        <item itemvalue="JUnit.PlantTest" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +184,7 @@
       <workItem from="1576001980514" duration="82000" />
       <workItem from="1576004481872" duration="12220000" />
       <workItem from="1576053547900" duration="12002000" />
-      <workItem from="1576074755262" duration="1692000" />
+      <workItem from="1576074755262" duration="4277000" />
     </task>
     <servers />
   </component>
@@ -212,11 +215,6 @@
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="50" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java</url>
-          <line>286</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

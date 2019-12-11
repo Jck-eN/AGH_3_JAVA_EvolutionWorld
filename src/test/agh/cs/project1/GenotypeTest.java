@@ -13,9 +13,11 @@ public class GenotypeTest {
     private Genotype g5;
     private Genotype g7;
     private Genotype g8;
+    private Genotype g9;
     @Before
     public void init() {
-        Integer[] g1arr = {1,2,3,3,4,6,5,7,7,7,0,0,2,5,3,5,4,5,4,7,3,4,5,6,6,7,7,7,7,7,1,1};
+        Integer[] g1arr = {0, 0, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7};
+        Integer[] g9arr = {0, 0, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7};
         Integer[] g2arr = {1,2,3,3,4,6,5,7,7,7,0,0,0,0,3,5,4,5,4,7,3,4,5,6,6,7,7,7,7,7,1,0};
         Integer[] g3arr = {0,2,3,3,0,6,5,7,7,7,0,0,0,0,3,5,0,5,4,7,3,0,5,6,6,7,7,7,7,7,0,0};
         Integer[] g4arr = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
@@ -30,6 +32,7 @@ public class GenotypeTest {
         g5 = new Genotype(g5arr);
         g8 = new Genotype(g8arr);
         g7 = new Genotype(g7arr);
+        g9 = new Genotype(g9arr);
     }
 
 
@@ -46,5 +49,6 @@ public class GenotypeTest {
         Assert.assertEquals(g6.toString(),"[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7]");
         Assert.assertEquals(g7.merge(g8).toString(),"[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7]");
         Assert.assertEquals(g6.merge(g5).toString(),"[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7]");
+        Assert.assertEquals(g1.merge(g9).toString(),"[0, 0, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7]");
     }
 }
