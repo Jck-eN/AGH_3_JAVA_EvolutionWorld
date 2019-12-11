@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapSimulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/EvolutionMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/MapSwingVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/MapVisualizer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/agh/cs/project1/World.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,6 +45,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -71,10 +73,9 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.World">
-    <configuration name="World" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.World" />
+    <configuration name="MapSwingVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.MapSwingVisualizer" />
       <module name="AGH_3_JAVA_EvolutionWorld" />
-      <option name="PROGRAM_PARAMETERS" value="D:\_ROBOCZY\config.json 100" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="agh.cs.project1.*" />
@@ -85,17 +86,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="World" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.World" />
       <module name="AGH_3_JAVA_EvolutionWorld" />
+      <option name="PROGRAM_PARAMETERS" value="D:\_ROBOCZY\config.json 20" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="agh.cs.project1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="agh.cs.project1" />
-      <option name="MAIN_CLASS_NAME" value="agh.cs.project1.AnimalTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,18 +146,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.World" />
-      <item itemvalue="JUnit.AnimalTest" />
       <item itemvalue="JUnit.PlantTest" />
       <item itemvalue="JUnit.EvolutionMapTest" />
       <item itemvalue="JUnit.agh.cs.project1 in AGH_3_JAVA_EvolutionWorld" />
+      <item itemvalue="Application.MapSwingVisualizer" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.World" />
+        <item itemvalue="Application.MapSwingVisualizer" />
         <item itemvalue="JUnit.agh.cs.project1 in AGH_3_JAVA_EvolutionWorld" />
         <item itemvalue="JUnit.EvolutionMapTest" />
         <item itemvalue="JUnit.PlantTest" />
-        <item itemvalue="JUnit.AnimalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -176,6 +176,8 @@
       <workItem from="1575397992071" duration="94000" />
       <workItem from="1575448939221" duration="2627000" />
       <workItem from="1575666529081" duration="1932000" />
+      <workItem from="1576001980514" duration="82000" />
+      <workItem from="1576004481872" duration="12220000" />
     </task>
     <servers />
   </component>
@@ -198,9 +200,13 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="40" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="50" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

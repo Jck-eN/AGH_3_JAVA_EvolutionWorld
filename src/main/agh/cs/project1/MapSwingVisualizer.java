@@ -9,13 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class MapSimulation implements ActionListener {
+public class MapSwingVisualizer implements ActionListener {
 
     //simulation options:
     public final int delay;
     public EvolutionMap map;
-    public int startNumOfAnimals;
-    public int grassSpawnedInEachDay;
 
     //simulation necessary:
     public JFrame frame;
@@ -23,16 +21,15 @@ public class MapSimulation implements ActionListener {
     public Timer timer;
 
 
-    public MapSimulation(EvolutionMap map, int delay) {
+    public MapSwingVisualizer(EvolutionMap map, int delay) {
 
         this.map = map;
         this.delay = delay;
-        this.grassSpawnedInEachDay = grassSpawnedInEachDay;
 
-        timer = new Timer(delay*1, this);
+        timer = new Timer(delay, this);
 
-        frame = new JFrame("Evolution Simulator");
-        frame.setSize(1000, 1000);
+        frame = new JFrame("Evolution World");
+        frame.setSize(Config.EVOLUTION_MAP_WIDTH*15, Config.EVOLUTION_MAP_HEIGHT*15);
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);

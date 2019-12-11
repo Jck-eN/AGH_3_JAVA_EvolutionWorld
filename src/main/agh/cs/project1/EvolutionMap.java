@@ -9,6 +9,7 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
     private final Rectangle area = new Rectangle(new Vector2d(0,0), new Vector2d(Config.EVOLUTION_MAP_WIDTH-1, Config.EVOLUTION_MAP_HEIGHT-1));
     private final Rectangle jungle = new Rectangle(new Vector2d((Config.EVOLUTION_MAP_WIDTH-Config.JUNGLE_WIDTH)/2,(Config.EVOLUTION_MAP_HEIGHT-Config.JUNGLE_HEIGHT)/2),
             new Vector2d((Config.EVOLUTION_MAP_WIDTH-Config.JUNGLE_WIDTH)/2+Config.JUNGLE_WIDTH, (Config.EVOLUTION_MAP_HEIGHT-Config.JUNGLE_HEIGHT)/2+Config.JUNGLE_HEIGHT));
+    private Integer day=0;
 
 
     private final ArrayList[][] animalList = new ArrayList[this.getTopRightCorner().x-this.getBottomLeftCorner().x+1][];
@@ -75,8 +76,10 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
 
     private void addPlant(Rectangle areaToPlant, Rectangle areaForbidden){
         Vector2d position = this.getRandomFreePositionWithForbiddenArea(areaToPlant, areaForbidden);
-        Plant g = new Plant(position);
-        this.plants.put(position, g);
+        if(position!=null){
+            Plant g = new Plant(position);
+            this.plants.put(position, g);
+        }
     }
 
     public void place(Animal animal){
@@ -158,8 +161,9 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
             else if (elementOnNewPosition instanceof Animal) {
                 a.createNewAnimal((Animal) elementOnNewPosition);
             }
-
         }
+
+        this.day+=1;
 
 
         this.addPlant(this.jungle);             //Inside the jungle
@@ -204,10 +208,6 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         this.animalsAt(newPosition).add(a);
     }
 
-    public String toString() {
-        return new MapVisualizer(this).draw(this.getBottomLeftCorner(), this.getTopRightCorner());
-    }
-
 
     public Vector2d findFreeSpaceNear(Vector2d original) {
         for(int x = -1; x < 2; x++){
@@ -225,13 +225,12 @@ public class EvolutionMap implements IWorldMap, IPositionChangeObserver {
         return null;
     }
 
-    public Vector2d getJungleBottomLeft(){
-        return this.jungle.getBottomLeftCorner();
-    }
-
-    public Vector2d getJungleTopRight(){
-        return this.jungle.getTopRightCorner();
+    public Rectangle getJungle(){
+        return this.jungle;
     }
 
 
+    public Integer getDay() {
+        return day;
+    }
 }
