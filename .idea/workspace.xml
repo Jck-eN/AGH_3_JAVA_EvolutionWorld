@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="062ecd51-bae4-4333-82c1-e5913ab7da68" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/AGH_3_JAVA_EvolutionWorld/META-INF/AGH_3_JAVA_EvolutionWorld.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +37,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowStructure.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -182,6 +183,9 @@
       <workItem from="1576004481872" duration="12220000" />
       <workItem from="1576053547900" duration="12002000" />
       <workItem from="1576074755262" duration="7101000" />
+      <workItem from="1576327212217" duration="251000" />
+      <workItem from="1576656513949" duration="4501000" />
+      <workItem from="1576665852043" duration="784000" />
     </task>
     <servers />
   </component>
